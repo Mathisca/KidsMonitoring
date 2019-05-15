@@ -1,6 +1,8 @@
 {
   "name": "KidsMonitoring",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "98e13a0f"
 }

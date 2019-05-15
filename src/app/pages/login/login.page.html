@@ -1,0 +1,27 @@
+<ion-content padding>
+  <form #form="ngForm" text-center>
+
+    <ion-text color="primary-contrast">
+      <h1>Welcome to the Kids Monitoring App</h1>
+    </ion-text>
+
+    <ion-text color="danger">
+      <h4 >Error: invalid password</h4>
+    </ion-text>
+
+    <div padding>
+      <ion-item>
+        <ion-input name="email" type="email" placeholder="your@email.com" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input name="name" type="password" placeholder="*******" ngModel required></ion-input>
+      </ion-item>
+    </div>
+    <div padding-top>
+      <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Login</ion-button>
+    </div>
+    <div>
+      <ion-button size="large" expand="block" [routerLink]="['/register']">Register</ion-button>
+    </div>
+  </form>
+</ion-content>
