@@ -1,27 +1,26 @@
 <ion-content padding>
-  <form #form="ngForm" text-center>
+  <form #form="ngForm" (ngSubmit)="login()" text-center>
 
     <ion-text color="primary-contrast">
       <h1>Welcome to the Kids Monitoring App</h1>
     </ion-text>
 
-    <ion-text color="danger">
-      <h4 >Error: invalid password</h4>
+    <ion-text *ngIf="form.invalid" color="danger">
+
     </ion-text>
 
-    <div padding>
+    <div>
       <ion-item>
-        <ion-input name="email" type="email" placeholder="your@email.com" required></ion-input>
+        <ion-label color="primary" position="floating">Email</ion-label>
+        <ion-input formControlName="email" name="email" placeholder="your@email.com" required type="email"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input name="name" type="password" placeholder="*******" ngModel required></ion-input>
+        <ion-label color="primary" position="floating">Password</ion-label>
+        <ion-input name="password" placeholder="*******" required type="password"></ion-input>
       </ion-item>
     </div>
     <div padding-top>
-      <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Login</ion-button>
-    </div>
-    <div>
-      <ion-button size="large" expand="block" [routerLink]="['/register']">Register</ion-button>
+      <ion-button [disabled]="form.invalid" expand="block" size="large" type="submit">Login / Register</ion-button>
     </div>
   </form>
 </ion-content>
