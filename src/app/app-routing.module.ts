@@ -5,11 +5,10 @@ import {AuthGuard} from './guards/auth.guard';
 const routes: Routes = [
     {path: '', redirectTo: '/login', pathMatch: 'full'},
     {path: 'login', loadChildren: './pages/login/login.module#LoginPageModule'},
-    {path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule'},
-    {
-        path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule'
-        , canActivate: [AuthGuard]
-    },
+    {path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule', canActivate: [AuthGuard]},
+    {path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule', canActivate: [AuthGuard]},
+  { path: 'kidchoose', loadChildren: './pages/kidchoose/kidchoose.module#KidchoosePageModule'},
+  { path: 'kidadd', loadChildren: './pages/kidadd/kidadd.module#KidaddPageModule', canActivate: [AuthGuard]},
 ];
 
 @NgModule({

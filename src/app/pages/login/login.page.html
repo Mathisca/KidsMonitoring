@@ -5,22 +5,19 @@
       <h1>Welcome to the Kids Monitoring App</h1>
     </ion-text>
 
-    <ion-text *ngIf="form.invalid" color="danger">
-
-    </ion-text>
-
-    <div>
+    <div [formGroup]="loginForm">
       <ion-item>
         <ion-label color="primary" position="floating">Email</ion-label>
         <ion-input formControlName="email" name="email" placeholder="your@email.com" required type="email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label color="primary" position="floating">Password</ion-label>
-        <ion-input name="password" placeholder="*******" required type="password"></ion-input>
+        <ion-input formControlName="password" name="password" placeholder="*******" required type="password"></ion-input>
       </ion-item>
     </div>
     <div padding-top>
-      <ion-button [disabled]="form.invalid" expand="block" size="large" type="submit">Login / Register</ion-button>
+      <ion-button [disabled]="loginForm.invalid" expand="block" size="large" type="submit">Login / Register</ion-button>
+      <ion-button expand="block" size="large" (click)="loginAsGuest()">Continue as Guest</ion-button>
     </div>
   </form>
 </ion-content>

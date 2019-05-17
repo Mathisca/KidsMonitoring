@@ -1,0 +1,21 @@
+<ion-item-divider>
+    <ion-reorder>
+
+        <ion-item-divider>
+            <ion-icon name="reorder"></ion-icon>
+
+            <ion-card-header>
+                <ion-card-subtitle>{{kid.birth}} months old</ion-card-subtitle>
+                <ion-card-title>{{kid.name}}</ion-card-title>
+            </ion-card-header>
+
+            <ion-avatar slot="end" margin>
+                <img [src]="kid.image" alt="{{kid.name}}'s face">
+            </ion-avatar>
+        </ion-item-divider>
+    </ion-reorder>
+
+
+    <ion-icon name="play" slot="end" [routerLink]="['/dashboard']" padding></ion-icon>
+
+</ion-item-divider>

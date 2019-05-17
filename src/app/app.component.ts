@@ -20,26 +20,12 @@ export class AppComponent {
     }
 
     initializeApp() {
+
         this.platform.ready().then(() => {
-            this.statusBar.styleDefault();
+            this.statusBar.styleLightContent();
             this.splashScreen.hide();
         });
 
-        const animationsOptions = {
-            animation: 'ios-transition',
-            duration: 1000
-        };
-
-        this.auth.authState.subscribe(state => {
-
-            console.log('Change stage');
-            if (state) {
-                console.log('Change stage&&&');
-                this.navCtrl.navigateRoot('dashboard');
-            } else {
-                this.navCtrl.navigateRoot('login');
-            }
-        });
-
+        this.auth.initService();
     }
 }

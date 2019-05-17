@@ -1,5 +1,7 @@
 ion-content{
-    --background: #3bff38 url('../../../assets/images/cover.jpg') no-repeat center center / cover;
+  --background: #3bff38 url('../../../assets/images/cover.png') no-repeat center center / cover;
+  // TODO background moves with keyboard active
+  --background-size: cover;
 }
 
 h1 {

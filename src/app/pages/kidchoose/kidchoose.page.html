@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Please select the kid to manage</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-reorder-group disabled="false" (ionItemReorder)="onRenderItems($event)">
+            <ion-card *ngFor="let kid of kidServ.kidsArray">
+                <app-kidcard [kid]="kid"></app-kidcard>
+            </ion-card>
+
+        </ion-reorder-group>
+    </ion-list>
+
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" [routerLink]="['/kidadd']">
+        <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>
