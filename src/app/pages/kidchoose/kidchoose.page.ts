@@ -18,14 +18,7 @@ export class KidchoosePage implements OnInit {
     }
 
     onRenderItems(event) {
-        console.log(`Moving item from ${event.detail.from} to ${event.detail.to}`);
         this.kidServ.moveKids(event);
         event.detail.complete();
-    }
-
-    onClick() {
-        console.log('go');
-
-        this.location.go('/dashboard');
     }
 }

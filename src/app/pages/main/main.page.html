@@ -1,0 +1,29 @@
+<ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-button (click)="openMenu()">
+            <ion-icon name="menu"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+</ion-toolbar>
+
+
+    <ion-menu menuId="first" contentId="content" side="start">
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-title>Kids Monitoring App</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list>
+                <ion-item *ngFor="let p of pages" (click)="openPage(p)" [routerLink]="[p.component]" [class.active-item]="p == currentPage">
+                    <ion-icon name="{{p.icon}}"></ion-icon>
+                    {{p.title}}
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+<ion-content>
+    <ion-router-outlet id="content" padding margin></ion-router-outlet>
+
+</ion-content>
