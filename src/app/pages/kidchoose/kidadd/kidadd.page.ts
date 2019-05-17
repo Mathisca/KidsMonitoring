@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Camera, CameraOptions} from '@ionic-native/camera/ngx';
-import {KidService} from '../../services/kid.service';
+import {KidService} from '../../../services/kid.service';
 import {Location} from '@angular/common';
 
 @Component({

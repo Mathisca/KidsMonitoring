@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: '',
     component: KidchoosePage
+  },
+  {
+    path: 'add',
+    loadChildren: './kidadd/kidadd.module#KidaddPageModule'
   }
 ];
 
@@ -20,7 +24,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ],
     declarations: [KidchoosePage, KidcardComponent]
 })
