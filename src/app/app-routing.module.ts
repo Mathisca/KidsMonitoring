@@ -3,10 +3,9 @@ import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {AuthGuard} from './guards/auth.guard';
 
 const routes: Routes = [
-    {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+    {path: '', redirectTo: '/main', pathMatch: 'full'},
     {path: 'login', loadChildren: './pages/login/login.module#LoginPageModule'},
     {path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule', canActivate: [AuthGuard]},
-    {path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule'},
   { path: 'kids', loadChildren: './pages/kidchoose/kidchoose.module#KidchoosePageModule'},
   { path: 'main', loadChildren: './pages/main/main.module#MainPageModule' },
 ];
