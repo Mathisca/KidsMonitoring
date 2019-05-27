@@ -1,9 +1,35 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>settings</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content padding>
+    <ion-item-group>
+        <ion-item-group>
+            <ion-item-divider>
+                <ion-label>General</ion-label>
+            </ion-item-divider>
 
-<ion-content>
+                <ion-radio-group name="country">
+                    <ion-list-header>
+                        <ion-label>Country</ion-label>
+                    </ion-list-header>
 
+                    <ion-item>
+                        <ion-label>Malaysia</ion-label>
+                        <ion-radio checked slot="start" value="my"></ion-radio>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>France</ion-label>
+                        <ion-radio slot="start" value="fr"></ion-radio>
+                    </ion-item>
+                </ion-radio-group>
+        </ion-item-group>
+
+
+        <ion-item-divider>
+            <ion-label>Measurements</ion-label>
+        </ion-item-divider>
+
+        <ion-item>
+            <ion-label>Use imperial units</ion-label>
+            <ion-toggle slot="end"></ion-toggle>
+        </ion-item>
+    </ion-item-group>
 </ion-content>
