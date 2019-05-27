@@ -20,6 +20,8 @@ export class KidService {
         this._currentKid = value;
     }
 
+    private lastId = 2;
+
     private _currentKid: number;
 
     private kids: Kid[] = [
@@ -36,7 +38,8 @@ export class KidService {
     }
 
     public addKid(pbirthdate: number, pname: string, psurname: string, pimage: string) {
-        this.kids.push({id: 0, image: pimage, birth: pbirthdate, name: pname, surname: psurname});
+        this.kids.push({id: 2, image: pimage, birth: pbirthdate, name: pname, surname: psurname});
+        this.lastId++;
     }
 
     public moveKids(event: any) {
