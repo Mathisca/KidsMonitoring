@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Kid} from '../../../services/kid.service';
+import {Kid, KidService} from '../../../services/kid.service';
 import {Location} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-kidcard',
@@ -11,12 +12,12 @@ export class KidcardComponent implements OnInit {
 
   @Input() kid: Kid;
 
-  constructor(private location: Location) { }
+  constructor(private router: Router, private kidServ: KidService) { }
 
   ngOnInit() {}
 
   onClick() {
-    console.log('a');
-    this.location.go('/dashboard');
+    this.kidServ.currentKid = this.kid.id;
+    this.router.navigateByUrl('/main/dashboard');
   }
 }

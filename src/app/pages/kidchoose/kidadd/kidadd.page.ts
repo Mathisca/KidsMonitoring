@@ -14,6 +14,7 @@ export class KidaddPage implements OnInit {
     surname: string;
     birthdate: string;
     image: string;
+    myDate: String = new Date().toISOString();
 
     constructor(public formBuilder: FormBuilder, public camera: Camera, private kidServ: KidService, private location: Location) {
 

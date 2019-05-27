@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TermsComponent} from './terms/terms.component';
 import {ModalController, NavController} from '@ionic/angular';
+import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
 
 @Component({
     selector: 'app-register',
@@ -8,8 +9,19 @@ import {ModalController, NavController} from '@ionic/angular';
     styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
+    public registerForm: FormGroup;
 
-    constructor(public modalController: ModalController, private navCtrl: NavController) {
+    constructor(public modalController: ModalController, private navCtrl: NavController, private formBuilder: FormBuilder) {
+        this.registerForm = this.formBuilder.group({
+            name: ['', [Validators.required]],
+            surname: ['', [Validators.required]],
+            gender: [''],
+            country: [''],
+            terms: ['', [Validators.pattern('true')]],
+
+        });
+
+        this.registerForm.patchValue({gender: 'f', country: 'my', terms: 'false'});
     }
 
     ngOnInit() {
@@ -25,7 +37,8 @@ export class RegisterPage implements OnInit {
     }
 
     register(): void {
-        this.navCtrl.navigateRoot('kidchoose');
+        console.log(JSON.stringify( this.registerForm.value));
+        this.navCtrl.navigateRoot('/kids');
 
     }
 }

@@ -1,5 +1,5 @@
 <ion-content padding>
-    <form #form="ngForm" (submit)="register()" text-center>
+    <form [formGroup]="registerForm" (submit)="register()" text-center>
 
         <ion-text color="primary-contrast">
             <h1>Your account is just a click away !</h1>
@@ -9,23 +9,23 @@
             <ion-list>
                 <ion-item>
                     <ion-label color="primary" position="floating">Name</ion-label>
-                    <ion-input name="email" placeholder="John" required type="name"></ion-input>
+                    <ion-input formControlName="name" placeholder="John" required></ion-input>
                 </ion-item>
 
                 <ion-item>
                     <ion-label color="primary" position="floating">Surname</ion-label>
-                    <ion-input name="surname" placeholder="Smith" required type="surname"></ion-input>
+                    <ion-input formControlName="surname" placeholder="Smith" required></ion-input>
                 </ion-item>
 
 
                 <ion-item>
                     <ion-label>Gender</ion-label>
-                    <ion-select placeholder="Select One">
+                    <ion-select placeholder="Select One" value="f" formControlName="gender">
                         <ion-select-option value="f">Female</ion-select-option>
                         <ion-select-option value="m">Male</ion-select-option>
                     </ion-select>
                 </ion-item>
-                <ion-radio-group>
+                <ion-radio-group name="country" formControlName="country">
                     <ion-list-header>
                         <ion-label>Country</ion-label>
                     </ion-list-header>
@@ -43,7 +43,7 @@
 
                 <ion-item>
                     <ion-label>I accept the <a (click)="presentModal()">terms and conditions</a></ion-label>
-                    <ion-toggle slot="end"></ion-toggle>
+                    <ion-toggle slot="end" formControlName="terms"></ion-toggle>
                 </ion-item>
 
             </ion-list>
@@ -51,7 +51,7 @@
 
         </div>
         <div padding-top>
-            <ion-button [disabled]="form.invalid" expand="block" size="large" type="submit">Register !</ion-button>
+            <ion-button [disabled]="registerForm.pristine || registerForm.invalid" expand="block" size="large" type="submit">Register !</ion-button>
         </div>
     </form>
 </ion-content>
