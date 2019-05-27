@@ -8,6 +8,7 @@ const routes: Routes = [
     {path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule', canActivate: [AuthGuard]},
   { path: 'kids', loadChildren: './pages/kidchoose/kidchoose.module#KidchoosePageModule'},
   { path: 'main', loadChildren: './pages/main/main.module#MainPageModule' },
+    {path: '**', redirectTo: '/main'},
 ];
 
 @NgModule({

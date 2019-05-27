@@ -24,6 +24,7 @@ export class MainPage implements OnInit {
         this.pages = [
             {title: 'Switch kid', path: '/kids', icon: 'repeat'},
             {title: 'Dashboard', path: '/main/dashboard', icon: 'home'},
+            {title: 'Tracking', path: '/main/tracking', icon: 'trending-up'},
             {title: 'Settings', path: '/main/settings', icon: 'settings'},
         ];
     }
