@@ -20,15 +20,15 @@ const routes: Routes = [
                 loadChildren: './settings/settings.module#SettingsPageModule'
             }, {
                 path: 'tracking',
-                loadChildren: './pages/main/tracking/tracking.module#TrackingPageModule'
+                loadChildren: './tracking/tracking.module#TrackingPageModule'
             }
             , {
                 path: 'reminders',
-                loadChildren: './pages/main/reminders/reminders.module#RemindersPageModule'
+                loadChildren: './reminders/reminders.module#RemindersPageModule'
             }
             , {
                 path: 'misc',
-                loadChildren: './pages/main/misc/misc.module#MiscPageModule'
+                loadChildren: './misc/misc.module#MiscPageModule'
             }
             , {
                 path: '',
