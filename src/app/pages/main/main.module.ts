@@ -1,13 +1,11 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 
 import {IonicModule} from '@ionic/angular';
 
 import {MainPage} from './main.page';
-import {DashboardPage} from './dashboard/dashboard.page';
-import {DashboardPageModule} from './dashboard/dashboard.module';
 
 const routes: Routes = [
     {
@@ -20,8 +18,23 @@ const routes: Routes = [
             }, {
                 path: 'settings',
                 loadChildren: './settings/settings.module#SettingsPageModule'
-            },
-
+            }, {
+                path: 'tracking',
+                loadChildren: './pages/main/tracking/tracking.module#TrackingPageModule'
+            }
+            , {
+                path: 'reminders',
+                loadChildren: './pages/main/reminders/reminders.module#RemindersPageModule'
+            }
+            , {
+                path: 'misc',
+                loadChildren: './pages/main/misc/misc.module#MiscPageModule'
+            }
+            , {
+                path: '',
+                redirectTo: 'dashboard',
+                pathMatch: 'full'
+            }
         ]
     }
 ];

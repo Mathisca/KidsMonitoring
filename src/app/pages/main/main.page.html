@@ -19,12 +19,12 @@
 
                 <ion-item *ngFor="let p of pages" (click)="openPage(p)" [routerLink]="[p.path]" [class.active-item]="p.path == this.router.url">
                     <ion-icon name="{{p.icon}}"></ion-icon>
-                    {{p.title}}
+                    <p margin-start>{{p.title}}</p>
                 </ion-item>
             </ion-list>
         </ion-content>
     </ion-menu>
 <ion-content>
-    <ion-router-outlet id="content" padding margin></ion-router-outlet>
+    <ion-router-outlet id="content"></ion-router-outlet>
 
 </ion-content>

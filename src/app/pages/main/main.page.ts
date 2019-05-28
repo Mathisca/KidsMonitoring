@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {MenuController} from '@ionic/angular';
-import {KidchoosePage} from '../kidchoose/kidchoose.page';
 import {Router} from '@angular/router';
 
 export interface MenuItem {
@@ -25,7 +24,9 @@ export class MainPage implements OnInit {
             {title: 'Switch kid', path: '/kids', icon: 'repeat'},
             {title: 'Dashboard', path: '/main/dashboard', icon: 'home'},
             {title: 'Tracking', path: '/main/tracking', icon: 'trending-up'},
-            {title: 'Settings', path: '/main/settings', icon: 'settings'},
+            {title: 'Reminders', path: '/main/reminders', icon: 'calendar'},
+            {title: 'Misc', path: '/main/misc', icon: 'planet'},
+            {title: 'Settings', path: '/main/settings', icon: 'switch'},
         ];
     }
 
