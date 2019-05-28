@@ -16,7 +16,6 @@
         </ion-header>
         <ion-content>
             <ion-list>
-
                 <ion-item *ngFor="let p of pages" (click)="openPage(p)" [routerLink]="[p.path]" [class.active-item]="p.path == this.router.url">
                     <ion-icon name="{{p.icon}}"></ion-icon>
                     <p margin-start>{{p.title}}</p>

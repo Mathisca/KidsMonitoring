@@ -10,7 +10,31 @@ import {TrackingPage} from './tracking.page';
 const routes: Routes = [
     {
         path: '',
-        component: TrackingPage
+        component: TrackingPage,
+        children: [
+            {
+                path: 'add',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: './add/add.module#AddPageModule'
+                    }
+                ]
+            }, {
+                path: 'analytics',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: './analytics/analytics.module#AnalyticsPageModule'
+                    }
+                ]
+            },
+            {
+                path: '',
+                redirectTo: '/app/tracking/add',
+                pathMatch: 'full'
+            }
+        ]
     }
 ];
 

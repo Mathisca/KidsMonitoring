@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Kid, KidService} from '../../../services/kid.service';
-import {Location} from '@angular/common';
 import {Router} from '@angular/router';
 
 @Component({
@@ -29,6 +28,6 @@ export class KidcardComponent implements OnInit {
 
   onClick() {
     this.kidServ.currentKid = this.kid.id;
-    this.router.navigateByUrl('/main/dashboard');
+      this.router.navigateByUrl('/app/');
   }
 }

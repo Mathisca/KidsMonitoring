@@ -24,15 +24,23 @@ const routes: Routes = [
             }
             , {
                 path: 'reminders',
-                loadChildren: './reminders/reminders.module#RemindersPageModule'
+                children: [
+                    {
+                        path: '',
+                        loadChildren: './reminders/reminders.module#RemindersPageModule'
+                    }
+                ]
             }
             , {
                 path: 'misc',
                 loadChildren: './misc/misc.module#MiscPageModule'
+            }, {
+                path: 'guides',
+                loadChildren: './guides/guides.module#GuidesPageModule'
             }
             , {
                 path: '',
-                redirectTo: 'dashboard',
+                redirectTo: '/app/dashboard',
                 pathMatch: 'full'
             }
         ]

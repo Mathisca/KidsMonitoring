@@ -22,20 +22,17 @@ export class MainPage implements OnInit {
     constructor(private menu: MenuController, public router: Router) {
         this.pages = [
             {title: 'Switch kid', path: '/kids', icon: 'repeat'},
-            {title: 'Dashboard', path: '/main/dashboard', icon: 'home'},
-            {title: 'Tracking', path: '/main/tracking', icon: 'trending-up'},
-            {title: 'Reminders', path: '/main/reminders', icon: 'calendar'},
-            {title: 'Misc', path: '/main/misc', icon: 'planet'},
-            {title: 'Settings', path: '/main/settings', icon: 'switch'},
+            {title: 'Dashboard', path: '/app/dashboard', icon: 'home'},
+            {title: 'Tracking', path: '/app/tracking', icon: 'trending-up'},
+            {title: 'Reminders', path: '/app/reminders', icon: 'calendar'},
+            {title: 'Misc', path: '/app/misc', icon: 'planet'},
+            {title: 'Guides', path: '/app/guides', icon: 'book'},
+            {title: 'Settings', path: '/app/settings', icon: 'switch'},
         ];
     }
 
     ionViewWillEnter() {
         this.currentPage = this.pages.find(value => value.path === this.router.url);
-        if (this.currentPage == null) {
-            this.currentPage = this.pages[1];
-            this.router.navigateByUrl('/main/dashboard');
-        }
     }
 
     ngOnInit() {
