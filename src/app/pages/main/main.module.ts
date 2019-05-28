@@ -20,7 +20,12 @@ const routes: Routes = [
                 loadChildren: './settings/settings.module#SettingsPageModule'
             }, {
                 path: 'tracking',
-                loadChildren: './tracking/tracking.module#TrackingPageModule'
+                children: [
+                    {
+                        path: '',
+                        loadChildren: './tracking/tracking.module#TrackingPageModule'
+                    }
+                ]
             }
             , {
                 path: 'reminders',
