@@ -25,7 +25,6 @@ export class HeadComponent implements OnInit {
 
     onSubmit() {
         this.kids.addHeadMeasure(this.addForm.value.size, this.addForm.value.date);
-        this.navCtrl.pop();
     }
 }
 

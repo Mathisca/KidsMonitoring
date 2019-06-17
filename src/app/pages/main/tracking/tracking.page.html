@@ -1,12 +1,14 @@
 <ion-tabs>
 
     <ion-tab-bar slot="bottom">
-        <ion-tab-button [routerLink]="['/app/tracking/add']" selected tab="tab1">
+        <ion-tab-button (click)="addSelected = true" [attr.selected]="addSelected == true"
+                        [routerLink]="['/app/tracking/add']">
             <ion-icon name="add"></ion-icon>
             <ion-label>New data</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button [routerLink]="['/app/tracking/analytics']" tab="tab2">
+        <ion-tab-button (click)="addSelected = false" [attr.selected]="addSelected == false"
+                        [routerLink]="['/app/tracking/analytics']">
             <ion-icon name="analytics"></ion-icon>
             <ion-label>Analysis</ion-label>
         </ion-tab-button>

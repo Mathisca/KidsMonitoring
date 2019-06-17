@@ -1,3 +1,47 @@
-<p>
-    height works!
-</p>
+<ion-content>
+    <form (submit)="onSubmit()" [formGroup]="addForm">
+
+        <ion-list>
+            <ion-item>
+                <ion-label>Date of measurement</ion-label>
+                <ion-datetime [(ngModel)]="myDate" display-format="DD/MM/YYYY" formControlName="date"
+                              picker-format="DD MMMM YYYY" placeholder="01/01/2019"></ion-datetime>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Height</ion-label>
+                <ion-input formControlName="size" min="0" placeholder="18 cm" type="number"></ion-input>
+            </ion-item>
+
+        </ion-list>
+
+        <ion-row>
+            <ion-col>
+                <ion-button [disabled]="addForm.pristine || addForm.invalid" color="primary" expand="block" shape="full"
+                            type="submit">Add the measure
+                </ion-button>
+            </ion-col>
+        </ion-row>
+
+    </form>
+    <div *ngIf="kids.kidsArray[kids.currentKidIndex].heightmeasures != null || kids.kidsArray[kids.currentKidIndex].heightmeasures.length > 0">
+
+        <h2>List of measurements</h2>
+
+        <table>
+            <tr style="border-bottom: 1px solid black;">
+                <td>Date</td>
+                <td>Size (cm)</td>
+                <td>Action</td>
+            </tr>
+            <tr *ngFor="let measure of kids.kidsArray[kids.currentKidIndex].heightmeasures, index as i">
+                <td>{{ measure.adddate | date }}</td>
+                <td>{{ measure.value }}</td>
+                <td>
+                    <ion-button (click)="kids.removeHeightMeasure(i)">Remove</ion-button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</ion-content>
