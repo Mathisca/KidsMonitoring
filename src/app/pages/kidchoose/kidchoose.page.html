@@ -7,8 +7,8 @@
 <ion-content>
     <ion-list>
         <ion-reorder-group disabled="false" (ionItemReorder)="onRenderItems($event)">
-            <ion-card *ngFor="let kid of kidServ.kidsArray">
-                <app-kidcard [kid]="kid"></app-kidcard>
+            <ion-card *ngFor="let kid of kidServ.kidsArray, index as i">
+                <app-kidcard [index]="i" [kid]="kid"></app-kidcard>
             </ion-card>
 
         </ion-reorder-group>

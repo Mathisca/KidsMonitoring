@@ -1,13 +1,37 @@
 <ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-card [routerLink]="['height']">
+                    <h1>Height</h1>
+                    <p>Measure your child</p>
+                </ion-card>
+            </ion-col>
 
-    <ion-card>
-        <ion-card-header>
-            <ion-card-title>Add growth measurement</ion-card-title>
-        </ion-card-header>
+            <ion-col>
+                <ion-card [routerLink]="['weight']">
+                    <h1>Weight</h1>
+                    <p>Weight your child</p>
+                </ion-card>
+            </ion-col>
 
-        <ion-card-content>
-            It is important to [...]
-        </ion-card-content>
-    </ion-card>
+        </ion-row>
 
+        <ion-row>
+            <ion-col>
+                <ion-card [routerLink]="['head']">
+                    <h1>Head circumference</h1>
+                    <p>Check his head circumference</p>
+                </ion-card>
+            </ion-col>
+
+
+            <ion-col>
+                <ion-card>
+                    <h1>Vaccines</h1>
+                    <p>Check your child's vaccines </p>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

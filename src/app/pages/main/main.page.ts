@@ -32,7 +32,7 @@ export class MainPage implements OnInit {
     }
 
     ionViewWillEnter() {
-        this.currentPage = this.pages.find(value => value.path === this.router.url);
+        this.currentPage = this.pages.find(value => this.router.url.includes(value.path));
     }
 
     ngOnInit() {
