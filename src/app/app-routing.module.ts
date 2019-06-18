@@ -9,6 +9,7 @@ const routes: Routes = [
     {
         path: 'app', loadChildren: './pages/main/main.module#MainPageModule'
     },
+    {path: 'milestones', loadChildren: './pages/main/milestones/milestones.module#MilestonesPageModule'},
 ];
 
 @NgModule({

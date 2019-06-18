@@ -4,6 +4,7 @@ import {NavController, Platform} from '@ionic/angular';
 import {SplashScreen} from '@ionic-native/splash-screen/ngx';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {AuthService} from './services/auth.service';
+import {KidService} from './services/kid.service';
 
 @Component({
     selector: 'app-root',
@@ -15,17 +16,18 @@ export class AppComponent {
         private platform: Platform,
         private splashScreen: SplashScreen,
         private statusBar: StatusBar,
-        private auth: AuthService) {
+        private auth: AuthService,
+        private kid: KidService) {
         this.initializeApp();
     }
 
     initializeApp() {
-
+        this.auth.initService();
+        this.kid.initService();
         this.platform.ready().then(() => {
             this.statusBar.styleLightContent();
             this.splashScreen.hide();
         });
 
-        this.auth.initService();
     }
 }

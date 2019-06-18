@@ -24,13 +24,7 @@ export class KidService {
     private kids: Kid[];
 
     constructor(private storage: Storage) {
-        this.storage.get('kids').then((val) => {
-            this.kids = val;
-        });
 
-        this.storage.get('kidIndex').then((val) => {
-            this.currentKidIndex = val;
-        });
     }
 
     private _currentKidIndex: number;
@@ -126,4 +120,13 @@ export class KidService {
         this.storage.set('kids', this.kids);
     }
 
+    initService() {
+        this.storage.get('kids').then((val) => {
+            this.kids = val;
+        });
+
+        this.storage.get('kidIndex').then((val) => {
+            this.currentKidIndex = val;
+        });
+    }
 }

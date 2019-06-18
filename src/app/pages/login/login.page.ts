@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
@@ -23,13 +23,13 @@ export class LoginPage {
         if (this.loginForm.dirty && this.loginForm.valid) {
             let email: string = this.loginForm.value.email;
             let password: string = this.loginForm.value.password;
-
             console.log('Email: ' + email + ' pass : ' + password);
             this.auth.login();
         }
     }
 
     loginAsGuest() {
+        this.auth.account.username = 'guest';
         this.auth.login();
     }
 }

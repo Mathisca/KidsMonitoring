@@ -37,8 +37,8 @@ const routes: Routes = [
                 ]
             }
             , {
-                path: 'misc',
-                loadChildren: './misc/misc.module#MiscPageModule'
+                path: 'milestones',
+                loadChildren: './milestones/milestones.module#MilestonesPageModule'
             }, {
                 path: 'guides',
                 loadChildren: './guides/guides.module#GuidesPageModule'

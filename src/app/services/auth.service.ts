@@ -3,21 +3,38 @@ import {BehaviorSubject} from 'rxjs';
 import {Storage} from '@ionic/storage';
 import {NavController} from '@ionic/angular';
 
+export interface AccountData {
+    username: string;
+    password: string;
+    name: string;
+    surname: string;
+    gender: string;
+    country: string;
+}
+
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
-    authState = new BehaviorSubject(false);
-    token: string;
-
     constructor(private storage: Storage, private navCtrl: NavController) {
+        this.account = {} as AccountData;
+    }
+
+    private _account: AccountData;
+    authState = new BehaviorSubject(false);
+
+    get account(): AccountData {
+        return this._account;
+    }
+
+    set account(value: AccountData) {
+        this._account = value;
+        this.storage.set('account', value);
+
     }
 
 
     login() {
-        // TODO Stub
-        //this.storage.set('token', 'wow');
-        console.log('Set token');
         this.authState.next(true);
         this.navCtrl.navigateRoot('register');
     }
@@ -30,15 +47,10 @@ export class AuthService {
         this.authState.next(auth);
     }
 
-    private isTokenValid() {
-        //TODO check if valid and disconnect if not
-    }
-
     public initService() {
-        this.storage.get('token').then((val) => {
-            this.token = val;
-            console.log('Token : ' + val);
-            if (this.token != null) {
+        this.storage.get('account').then((val) => {
+            if (val != null) {
+                this._account = val;
                 this.setAuthentificated(true);
             }
         });

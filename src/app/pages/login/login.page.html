@@ -17,7 +17,7 @@
     </div>
     <div padding-top>
       <ion-button [disabled]="loginForm.pristine || loginForm.invalid" expand="block" size="large" type="submit">Login / Register</ion-button>
-      <ion-button expand="block" size="large" (click)="loginAsGuest()">Continue as Guest</ion-button>
+        <ion-button (click)="loginAsGuest()" expand="block" size="large">Offline mode</ion-button>
     </div>
   </form>
 </ion-content>
