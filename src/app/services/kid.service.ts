@@ -12,6 +12,7 @@ export interface Kid {
     birth: number;
     name: string;
     surname: string;
+    gender: string;
     headmeasures: Measure[];
     weightmeasures: Measure[];
     heightmeasures: Measure[];
@@ -85,13 +86,14 @@ export class KidService {
         this.saveKids();
     }
 
-    public addKid(pbirthdate: number, pname: string, psurname: string, pimage: string) {
+    public addKid(pbirthdate: number, pname: string, psurname: string, pimage: string, kgender: string) {
         if (this.kids == null) {
             this.kids = [{
                 image: pimage,
                 birth: pbirthdate,
                 name: pname,
                 surname: psurname,
+                gender: kgender,
                 headmeasures: [],
                 heightmeasures: [],
                 weightmeasures: []
@@ -101,6 +103,7 @@ export class KidService {
                 image: pimage,
                 birth: pbirthdate,
                 name: pname,
+                gender: kgender,
                 surname: psurname,
                 headmeasures: [],
                 heightmeasures: [],

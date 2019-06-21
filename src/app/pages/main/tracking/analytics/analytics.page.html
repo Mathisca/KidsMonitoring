@@ -1,9 +1,20 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>analytics</ion-title>
-    </ion-toolbar>
-</ion-header>
+<ion-item>
+    <ion-label>Graph type</ion-label>
+    <ion-select (ionChange)="recalculateData()" [(ngModel)]="graphType" placeholder="Select One" value="w">
+        <ion-select-option value="w">Weight</ion-select-option>
+        <ion-select-option value="h">Height</ion-select-option>
+        <ion-select-option value="c">Head circumference</ion-select-option>
+    </ion-select>
+</ion-item>
+<ion-item>
+    <ion-label>Graph type</ion-label>
+    <ion-select (ionChange)="recalculateData()" [(ngModel)]="span" placeholder="Select One" value="w">
+        <ion-select-option value="w">Birth to 6 months</ion-select-option>
+        <ion-select-option value="h">6 months to 2 years</ion-select-option>
+    </ion-select>
+</ion-item>
 
 <ion-content>
+    <canvas #analyticsGraph></canvas>
 
 </ion-content>

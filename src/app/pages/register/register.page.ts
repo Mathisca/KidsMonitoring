@@ -47,6 +47,7 @@ export class RegisterPage implements OnInit {
         this.auth.account.name = this.registerForm.value.name;
         this.auth.account.surname = this.registerForm.value.surname;
 
+        this.auth.saveData();
         this.navCtrl.navigateRoot('/kids');
     }
 }

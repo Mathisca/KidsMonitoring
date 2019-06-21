@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Camera, CameraOptions} from '@ionic-native/camera/ngx';
 import {KidService} from '../../../services/kid.service';
@@ -45,7 +45,7 @@ export class KidaddPage {
     }
 
     onSubmit() {
-        this.kidServ.addKid(this.addForm.value.birthdate, this.addForm.value.name, this.addForm.value.surname, this.image);
+        this.kidServ.addKid(this.addForm.value.birthdate, this.addForm.value.name, this.addForm.value.surname, this.image, this.addForm.value.gender);
         this.location.back();
     }
 }

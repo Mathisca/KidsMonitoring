@@ -17,7 +17,6 @@ export interface AccountData {
 })
 export class AuthService {
     constructor(private storage: Storage, private navCtrl: NavController) {
-        this.account = {} as AccountData;
     }
 
     private _account: AccountData;
@@ -29,14 +28,16 @@ export class AuthService {
 
     set account(value: AccountData) {
         this._account = value;
-        this.storage.set('account', value);
-
     }
 
 
     login() {
         this.authState.next(true);
         this.navCtrl.navigateRoot('register');
+    }
+
+    saveData() {
+        this.storage.set('account', this.account);
     }
 
     isAuthentificated() {
@@ -50,8 +51,10 @@ export class AuthService {
     public initService() {
         this.storage.get('account').then((val) => {
             if (val != null) {
-                this._account = val;
+                this.account = val;
                 this.setAuthentificated(true);
+            } else {
+                this.account = {} as AccountData;
             }
         });
     }
