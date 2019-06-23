@@ -5,6 +5,7 @@ import {SplashScreen} from '@ionic-native/splash-screen/ngx';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {AuthService} from './services/auth.service';
 import {KidService} from './services/kid.service';
+import {CalendarService} from './services/calendar.service';
 
 @Component({
     selector: 'app-root',
@@ -17,6 +18,7 @@ export class AppComponent {
         private splashScreen: SplashScreen,
         private statusBar: StatusBar,
         private auth: AuthService,
+        private calendar: CalendarService,
         private kid: KidService) {
         this.initializeApp();
     }
@@ -24,6 +26,7 @@ export class AppComponent {
     initializeApp() {
         this.auth.initService();
         this.kid.initService();
+        this.calendar.initService();
         this.platform.ready().then(() => {
             this.statusBar.styleLightContent();
             this.splashScreen.hide();

@@ -22,7 +22,7 @@ export interface Kid {
     providedIn: 'root'
 })
 export class KidService {
-    private kids: Kid[];
+    private kids: Kid[] = [];
 
     constructor(private storage: Storage) {
 
@@ -49,12 +49,12 @@ export class KidService {
     }
 
     public removeHeightMeasure(index: number) {
-        this.kids[this.currentKidIndex].heightmeasures.splice(index);
+        this.kids[this.currentKidIndex].heightmeasures.splice(index, 1);
         this.saveKids();
     }
 
     public removeWeightMeasure(index: number) {
-        this.kids[this.currentKidIndex].weightmeasures.splice(index);
+        this.kids[this.currentKidIndex].weightmeasures.splice(index, 1);
         this.saveKids();
     }
 
@@ -125,11 +125,15 @@ export class KidService {
 
     initService() {
         this.storage.get('kids').then((val) => {
-            this.kids = val;
+            if (val != null) {
+                this.kids = val;
+            }
         });
 
         this.storage.get('kidIndex').then((val) => {
-            this.currentKidIndex = val;
+            if (val != null) {
+                this.currentKidIndex = val;
+            }
         });
     }
 }
