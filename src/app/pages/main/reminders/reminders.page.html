@@ -1,9 +1,17 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>reminders</ion-title>
-    </ion-toolbar>
-</ion-header>
+<ion-tabs>
 
-<ion-content>
+    <ion-tab-bar slot="bottom">
+        <ion-tab-button (click)="addSelected = true" [attr.selected]="addSelected == true"
+                        [routerLink]="['/app/reminders/calendar']">
+            <ion-icon name="calendar"></ion-icon>
+            <ion-label>Calendar</ion-label>
+        </ion-tab-button>
 
-</ion-content>
+        <ion-tab-button (click)="addSelected = false" [attr.selected]="addSelected == false"
+                        [routerLink]="['/app/reminders/add']">
+            <ion-icon name="add"></ion-icon>
+            <ion-label>Add event</ion-label>
+        </ion-tab-button>
+    </ion-tab-bar>
+
+</ion-tabs>

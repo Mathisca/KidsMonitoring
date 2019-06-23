@@ -10,7 +10,32 @@ import {RemindersPage} from './reminders.page';
 const routes: Routes = [
     {
         path: '',
-        component: RemindersPage
+        component: RemindersPage,
+        children: [
+            {
+                path: 'add',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: './addreminder/addreminder.module#AddreminderPageModule'
+                    }
+                ]
+            }, {
+                path: 'calendar',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: './calendar/calendar.module#CalendarPageModule'
+                    }
+                ]
+            },
+            {
+                path: '',
+                redirectTo: '/app/reminders/calendar',
+                pathMatch: 'full'
+            }
+        ]
+
     }
 ];
 
