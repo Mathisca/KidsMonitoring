@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Storage} from '@ionic/storage';
+import {KidService} from './kid.service';
 
 export interface Event {
     title: string;
@@ -12,7 +13,7 @@ export interface Event {
     providedIn: 'root'
 })
 export class CalendarService {
-    constructor(private storage: Storage) {
+    constructor(private storage: Storage, private kids: KidService) {
     }
 
     private _events: Event[] = [];

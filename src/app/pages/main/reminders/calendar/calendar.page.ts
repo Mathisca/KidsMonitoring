@@ -24,15 +24,8 @@ export class CalendarPage implements OnInit {
 
     ionViewDidEnter() {
         const calendarApi = this.calendarComponent.getApi();
-        const header = {
-            left: 'dayGridMonth,timeGridWeek',
-            center: 'title',
-            right: 'prev,next'
-        };
 
         calendarApi.setOption('nowIndicator', true);
-        calendarApi.setOption('header', header);
-
 
         calendarApi.setOption('eventClick', info => {
             alert('Event: ' + info.event.title);

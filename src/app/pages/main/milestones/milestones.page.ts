@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {MilestonesService} from '../../../services/milestones.service';
 
 @Component({
     selector: 'app-milestones',
@@ -6,8 +7,10 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./milestones.page.scss'],
 })
 export class MilestonesPage implements OnInit {
+    milestoneSpan = '2mo';
 
-    constructor() {
+
+    constructor(public milestones: MilestonesService) {
     }
 
     ngOnInit() {

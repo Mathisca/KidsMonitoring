@@ -13,9 +13,6 @@ export class RegisterPage implements OnInit {
     public registerForm: FormGroup;
 
     constructor(public modalController: ModalController, private navCtrl: NavController, private formBuilder: FormBuilder, private auth: AuthService) {
-        if (this.auth.account.username !== undefined && this.auth.account.name !== undefined) {
-            this.navCtrl.navigateRoot('/kids');
-        }
 
         this.registerForm = this.formBuilder.group({
             name: ['', [Validators.required]],

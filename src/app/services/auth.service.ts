@@ -33,7 +33,11 @@ export class AuthService {
 
     login() {
         this.authState.next(true);
-        this.navCtrl.navigateRoot('register');
+        if (this.account.username !== undefined && this.account.name !== undefined) {
+            this.navCtrl.navigateRoot('/kids');
+        } else {
+            this.navCtrl.navigateRoot('/register');
+        }
     }
 
     saveData() {

@@ -1,9 +1,62 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>milestones</ion-title>
-    </ion-toolbar>
-</ion-header>
-
 <ion-content>
 
+    <ion-item>
+        <ion-label>Milestones span</ion-label>
+        <ion-select [(ngModel)]="milestoneSpan">
+            <ion-select-option value="2mo">Birth to 2 months</ion-select-option>
+            <ion-select-option value="4mo">2 months to 4 months</ion-select-option>
+            <ion-select-option value="6mo">4 months to 6 months</ion-select-option>
+            <ion-select-option value="9mo">6 months to 9 months</ion-select-option>
+            <ion-select-option value="12mo">9 months to 12 months</ion-select-option>
+            <ion-select-option value="18mo">12 months to 18 months</ion-select-option>
+            <ion-select-option value="24mo">18 months to 24 months</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+
+    <ion-list>
+        <ion-list-header>
+            Social and Emotional
+        </ion-list-header>
+
+        <ion-item (click)="milestones.toggleCheck('social'+ i + milestoneSpan)"
+                  *ngFor="let milestone of milestones.milestonesData.social[milestoneSpan]; let i = index">
+            <ion-label text-wrap>{{milestone}}</ion-label>
+            <ion-checkbox [checked]="milestones.isDone('social'+ i + milestoneSpan)" slot="end"></ion-checkbox>
+        </ion-item>
+
+        <ion-list-header>
+            Language/Communication
+        </ion-list-header>
+
+        <ion-item (click)="milestones.toggleCheck('language'+ i + milestoneSpan)"
+                  *ngFor="let milestone of milestones.milestonesData.language[milestoneSpan]; let i = index">
+            <ion-label text-wrap>{{milestone}}</ion-label>
+            <ion-checkbox [checked]="milestones.isDone('language'+ i + milestoneSpan)" slot="end"></ion-checkbox>
+        </ion-item>
+        <ion-list-header>
+            Cognitive (learning, thinking, problem-solving)
+        </ion-list-header>
+
+        <ion-item (click)="milestones.toggleCheck('cognitive'+ i + milestoneSpan)"
+                  *ngFor="let milestone of milestones.milestonesData.cognitive[milestoneSpan]; let i = index">
+            <ion-label text-wrap>{{milestone}}</ion-label>
+            <ion-checkbox [checked]="milestones.isDone('cognitive'+ i + milestoneSpan)" slot="end"></ion-checkbox>
+        </ion-item>
+
+        <ion-list-header>
+            Movement/Physical Development
+        </ion-list-header>
+
+        <ion-item (click)="milestones.toggleCheck('movement'+ i + milestoneSpan)"
+                  *ngFor="let milestone of milestones.milestonesData.movement[milestoneSpan]; let i = index">
+            <ion-label text-wrap>{{milestone}}</ion-label>
+            <ion-checkbox [checked]="milestones.isDone('movement'+ i + milestoneSpan)" slot="end"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+
+    <ion-item>
+        <ion-label text-wrap>Source: <a href="https://www.cdc.gov/">Centers for Disease Control and Prevention</a>
+        </ion-label>
+    </ion-item>
 </ion-content>

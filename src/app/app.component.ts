@@ -6,6 +6,7 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {AuthService} from './services/auth.service';
 import {KidService} from './services/kid.service';
 import {CalendarService} from './services/calendar.service';
+import {MilestonesService} from './services/milestones.service';
 
 @Component({
     selector: 'app-root',
@@ -19,6 +20,7 @@ export class AppComponent {
         private statusBar: StatusBar,
         private auth: AuthService,
         private calendar: CalendarService,
+        private milestones: MilestonesService,
         private kid: KidService) {
         this.initializeApp();
     }
@@ -27,6 +29,7 @@ export class AppComponent {
         this.auth.initService();
         this.kid.initService();
         this.calendar.initService();
+        this.milestones.initService();
         this.platform.ready().then(() => {
             this.statusBar.styleLightContent();
             this.splashScreen.hide();
