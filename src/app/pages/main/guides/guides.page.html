@@ -1,9 +1,23 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>guides</ion-title>
-    </ion-toolbar>
-</ion-header>
-
 <ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-card [routerLink]="['teeth']" padding>
+                    <h1>Teeth</h1>
+                    <p>Check teeth growth</p>
+                </ion-card>
+            </ion-col>
 
+            <ion-col>
+                <a href="https://mypositiveparenting.org/wp-content/uploads/docs/pp-vaccination-chart-2016.pdf"
+                   target="_blank">
+                    <ion-card padding>
+                        <h1>Vaccines</h1>
+                        <p>Read about vaccines</p>
+                    </ion-card>
+                </a>
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
 </ion-content>

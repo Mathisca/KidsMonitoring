@@ -2,16 +2,16 @@
     <ion-grid>
         <ion-row>
             <ion-col>
-                <ion-card [routerLink]="['height']">
+                <ion-card [routerLink]="['height']" padding>
                     <h1>Height</h1>
                     <p>Measure your child</p>
                 </ion-card>
             </ion-col>
 
             <ion-col>
-                <ion-card [routerLink]="['weight']">
+                <ion-card [routerLink]="['weight']" padding>
                     <h1>Weight</h1>
-                    <p>Weight your child</p>
+                    <p>Track your child's weight</p>
                 </ion-card>
             </ion-col>
 
@@ -19,19 +19,13 @@
 
         <ion-row>
             <ion-col>
-                <ion-card [routerLink]="['head']">
+                <ion-card [routerLink]="['head']" padding>
                     <h1>Head circumference</h1>
                     <p>Check his head circumference</p>
                 </ion-card>
             </ion-col>
-
-
-            <ion-col>
-                <ion-card>
-                    <h1>Vaccines</h1>
-                    <p>Check your child's vaccines </p>
-                </ion-card>
-            </ion-col>
         </ion-row>
     </ion-grid>
+
+    <a href="https://www.who.int/childgrowth/training/en/" padding target="_blank">How to do the measurements</a>
 </ion-content>

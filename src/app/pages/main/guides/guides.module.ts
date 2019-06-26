@@ -6,12 +6,18 @@ import {RouterModule, Routes} from '@angular/router';
 import {IonicModule} from '@ionic/angular';
 
 import {GuidesPage} from './guides.page';
+import {TeethComponent} from './teeth/teeth.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: GuidesPage
+        component: GuidesPage,
+    },
+    {
+        path: 'teeth',
+        component: TeethComponent
     }
+
 ];
 
 @NgModule({
@@ -21,7 +27,7 @@ const routes: Routes = [
         IonicModule,
         RouterModule.forChild(routes)
     ],
-    declarations: [GuidesPage]
+    declarations: [GuidesPage, TeethComponent]
 })
 export class GuidesPageModule {
 }

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-reminders',
@@ -7,10 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class RemindersPage implements OnInit {
 
-    addSelected: boolean;
-
-    constructor() {
-        this.addSelected = true; // TODO check l'url
+    constructor(public router: Router) {
     }
 
 

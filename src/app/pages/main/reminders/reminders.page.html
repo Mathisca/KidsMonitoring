@@ -1,13 +1,13 @@
 <ion-tabs>
 
     <ion-tab-bar slot="bottom">
-        <ion-tab-button (click)="addSelected = true" [attr.selected]="addSelected == true"
+        <ion-tab-button [attr.selected]="this.router.url.includes('calendar')"
                         [routerLink]="['/app/reminders/calendar']">
             <ion-icon name="calendar"></ion-icon>
             <ion-label>Calendar</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button (click)="addSelected = false" [attr.selected]="addSelected == false"
+        <ion-tab-button [attr.selected]="this.router.url.includes('add')"
                         [routerLink]="['/app/reminders/add']">
             <ion-icon name="add"></ion-icon>
             <ion-label>Add event</ion-label>

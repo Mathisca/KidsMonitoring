@@ -30,6 +30,10 @@ export class AuthService {
         this._account = value;
     }
 
+    setCountry(country: string) {
+        this.account.country = country;
+        this.saveData();
+    }
 
     login() {
         this.authState.next(true);

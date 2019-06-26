@@ -12,27 +12,14 @@
 
                     <ion-item>
                         <ion-label>Malaysia</ion-label>
-                        <ion-radio checked slot="start" value="my"></ion-radio>
+                        <ion-radio (ionSelect)="this.auth.setCountry('my')" checked slot="start"></ion-radio>
                     </ion-item>
 
                     <ion-item>
                         <ion-label>France</ion-label>
-                        <ion-radio slot="start" value="fr"></ion-radio>
+                        <ion-radio (ionSelect)="this.auth.setCountry('fr')" slot="start"></ion-radio>
                     </ion-item>
                 </ion-radio-group>
         </ion-item-group>
-
-
-        <ion-item-divider>
-            <ion-label>Measurements</ion-label>
-        </ion-item-divider>
-
-        <ion-item>
-            <ion-label>Use imperial units</ion-label>
-            <ion-toggle slot="end"></ion-toggle>
-        </ion-item>
-
-        <ion-button expand="block" margin-top type="submit">Save settings</ion-button>
-
     </ion-item-group>
 </ion-content>
