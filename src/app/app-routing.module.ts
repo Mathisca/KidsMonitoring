@@ -8,7 +8,7 @@ const routes: Routes = [
     {path: 'kids', loadChildren: './pages/kidchoose/kidchoose.module#KidchoosePageModule'},
     {
         path: 'app', loadChildren: './pages/main/main.module#MainPageModule'
-    },
+    }
 ];
 
 @NgModule({

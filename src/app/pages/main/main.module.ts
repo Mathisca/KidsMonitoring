@@ -45,6 +45,9 @@ const routes: Routes = [
             }, {
                 path: 'diary',
                 loadChildren: './diary/diary.module#DiaryPageModule'
+            }, {
+                path: 'food',
+                loadChildren: './foodcalculator/foodcalculator.module#FoodcalculatorPageModule'
             }
             , {
                 path: '',

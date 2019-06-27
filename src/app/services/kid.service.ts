@@ -81,6 +81,21 @@ export class KidService {
 
     }
 
+    public ageOfCurrentKidInDays(): number {
+        return Math.abs(Math.ceil((new Date().valueOf() -
+            new Date(this.currentKid.birth).valueOf())));
+    }
+
+    public lastRecordedWeight(): number {
+        if (this.currentKid.weightmeasures === undefined
+            || this.currentKid.weightmeasures[this.currentKid.weightmeasures.length - 1] === undefined) {
+            return undefined;
+        }
+
+        return this.currentKid.weightmeasures[this.currentKid.weightmeasures.length - 1].value;
+    }
+
+
     public addHeightMeasure(length: number, date: number) {
         if (this.kids[this.currentKidIndex].heightmeasures == null) {
             this.kids[this.currentKidIndex].heightmeasures = [{adddate: date, value: length}];

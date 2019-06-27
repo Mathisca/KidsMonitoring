@@ -27,6 +27,7 @@ export class MainPage implements OnInit {
             {title: 'Reminders', path: '/app/reminders', icon: 'calendar'},
             {title: 'Milestones', path: '/app/milestones', icon: 'planet'},
             {title: 'Diray', path: '/app/diary', icon: 'book'},
+            {title: 'Food Calculator', path: '/app/food', icon: 'calculator'},
             {title: 'Guides', path: '/app/guides', icon: 'help-circle'},
             {title: 'Settings', path: '/app/settings', icon: 'switch'},
         ];
