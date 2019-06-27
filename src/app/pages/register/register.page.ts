@@ -12,7 +12,10 @@ import {AuthService} from '../../services/auth.service';
 export class RegisterPage implements OnInit {
     public registerForm: FormGroup;
 
-    constructor(public modalController: ModalController, private navCtrl: NavController, private formBuilder: FormBuilder, private auth: AuthService) {
+    constructor(public modalController: ModalController,
+                private navCtrl: NavController,
+                private formBuilder: FormBuilder,
+                private auth: AuthService) {
 
         this.registerForm = this.formBuilder.group({
             name: ['', [Validators.required]],

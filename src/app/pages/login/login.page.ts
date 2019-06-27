@@ -21,9 +21,8 @@ export class LoginPage {
 
     login() {
         if (this.loginForm.dirty && this.loginForm.valid) {
-            let email: string = this.loginForm.value.email;
-            let password: string = this.loginForm.value.password;
-            console.log('Email: ' + email + ' pass : ' + password);
+            // const email: string = this.loginForm.value.email;
+            // const password: string = this.loginForm.value.password;
             this.auth.login();
         }
     }

@@ -13,7 +13,7 @@ export interface Event {
     providedIn: 'root'
 })
 export class CalendarService {
-    constructor(private storage: Storage, private kids: KidService) {
+    constructor(private storage: Storage) {
     }
 
     private _events: Event[] = [];

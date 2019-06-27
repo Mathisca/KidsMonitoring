@@ -10,7 +10,7 @@ import {Location} from '@angular/common';
 
 export class KidchoosePage implements OnInit {
 
-    constructor(public kidServ: KidService, private location: Location) {
+    constructor(public kidServ: KidService) {
 
     }
 

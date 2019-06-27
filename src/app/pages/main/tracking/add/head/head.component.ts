@@ -12,7 +12,7 @@ export class HeadComponent implements OnInit {
     public addForm: FormGroup;
     myDate: any = new Date().toISOString();
 
-    constructor(public kids: KidService, public formBuilder: FormBuilder, private navCtrl: NavController) {
+    constructor(public kids: KidService, public formBuilder: FormBuilder) {
         this.addForm = this.formBuilder.group({
             date: ['', [Validators.required]],
             size: ['', [Validators.required]],

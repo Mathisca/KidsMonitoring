@@ -17,10 +17,10 @@ export class KidcardComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.monthOld = this.monthDiff(new Date(this.kid.birth), new Date());
+        this.monthOld = KidcardComponent.monthDiff(new Date(this.kid.birth), new Date());
     }
 
-    monthDiff(d1, d2) {
+    static monthDiff(d1, d2) {
         let months;
         months = (d2.getFullYear() - d1.getFullYear()) * 12;
         months -= d1.getMonth() + 1;

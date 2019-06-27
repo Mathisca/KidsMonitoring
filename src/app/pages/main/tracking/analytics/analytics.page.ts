@@ -19,7 +19,6 @@ export class AnalyticsPage {
     graphType = 'w';
     span = 'w';
 
-    startspan: number;
     endspan: number;
     currentVals: string;
     chart: Chart;

@@ -35,17 +35,20 @@ export class KidaddPage {
         };
 
         this.camera.getPicture(options).then((imageData) => {
-            // imageData is either a base64 encoded string or a file URI
-            // If it's base64 (DATA_URL):
             this.image = 'data:image/jpeg;base64,' + imageData;
         }, (err) => {
-            // Handle error
+            console.log('Error : ' + err);
         });
 
     }
 
     onSubmit() {
-        this.kidServ.addKid(this.addForm.value.birthdate, this.addForm.value.name, this.addForm.value.surname, this.image, this.addForm.value.gender);
+        this.kidServ.addKid(this.addForm.value.birthdate,
+            this.addForm.value.name,
+            this.addForm.value.surname,
+            this.image,
+            this.addForm.value.gender);
+
         this.location.back();
     }
 }

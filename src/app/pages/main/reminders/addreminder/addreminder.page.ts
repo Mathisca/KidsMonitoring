@@ -12,7 +12,7 @@ export class AddreminderPage implements OnInit {
 
     public addForm: FormGroup;
 
-    constructor(public calendar: CalendarService, public formBuilder: FormBuilder, private navCtrl: NavController) {
+    constructor(public calendar: CalendarService, public formBuilder: FormBuilder) {
         this.addForm = this.formBuilder.group({
             title: ['', [Validators.required]],
             start: ['', [Validators.required]],
