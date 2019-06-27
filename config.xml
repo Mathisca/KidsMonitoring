@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="fr.mathisca.kidsmonitoring" version="0.0.3" xmlns="http://www.w3.org/ns/widgets">
+<widget id="fr.mathisca.kidsmonitoring" version="0.0.4" xmlns="http://www.w3.org/ns/widgets">
     <name>KidsMonitoring</name>
     <description>An application by  Mathis Cariou.</description>
     <author email="contact@mathisca.fr" href="https://mathisca.fr/">Mathis Cariou</author>
