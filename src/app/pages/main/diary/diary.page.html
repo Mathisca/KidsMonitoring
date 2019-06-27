@@ -1,9 +1,21 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>diary</ion-title>
-    </ion-toolbar>
-</ion-header>
+<ion-content padding>
+    <h2>{{kids.currentKid.name}}'s diary</h2>
 
-<ion-content>
+    <ion-card *ngFor="let pDiary of this.diary.currentDiary">
+        <ion-card-header>
+            <ion-card-subtitle>{{pDiary.date | date}}</ion-card-subtitle>
+            <ion-card-title>{{pDiary.title}}</ion-card-title>
+        </ion-card-header>
 
+        <ion-card-content>
+            {{pDiary.notes}}
+        </ion-card-content>
+    </ion-card>
+
+
+    <ion-fab [routerLink]="['add']" horizontal="end" slot="fixed" vertical="bottom">
+        <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 </ion-content>

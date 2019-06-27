@@ -39,6 +39,10 @@ export class KidService {
         this.storage.set('kidIndex', this.currentKidIndex);
     }
 
+    get currentKid() {
+        return this.kidsArray[this.currentKidIndex];
+    }
+
     get kidsArray() {
         return this.kids;
     }
@@ -129,6 +133,8 @@ export class KidService {
         this.storage.get('kidIndex').then((val) => {
             if (val != null) {
                 this.currentKidIndex = val;
+            } else {
+                this.currentKidIndex = 0;
             }
         });
     }

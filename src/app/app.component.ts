@@ -7,6 +7,7 @@ import {AuthService} from './services/auth.service';
 import {KidService} from './services/kid.service';
 import {CalendarService} from './services/calendar.service';
 import {MilestonesService} from './services/milestones.service';
+import {DiaryService} from './services/diary.service';
 
 @Component({
     selector: 'app-root',
@@ -21,6 +22,7 @@ export class AppComponent {
         private auth: AuthService,
         private calendar: CalendarService,
         private milestones: MilestonesService,
+        private diary: DiaryService,
         private kid: KidService) {
         this.initializeApp();
     }
@@ -30,6 +32,7 @@ export class AppComponent {
         this.kid.initService();
         this.calendar.initService();
         this.milestones.initService();
+        this.diary.initService();
         this.platform.ready().then(() => {
             this.statusBar.styleLightContent();
             this.splashScreen.hide();

@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {KidService} from '../../../services/kid.service';
+import {DiaryService} from '../../../services/diary.service';
 
 @Component({
     selector: 'app-diary',
@@ -7,7 +9,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class DiaryPage implements OnInit {
 
-    constructor() {
+    constructor(public kids: KidService, public diary: DiaryService) {
     }
 
     ngOnInit() {
