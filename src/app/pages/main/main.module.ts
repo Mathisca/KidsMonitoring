@@ -42,6 +42,9 @@ const routes: Routes = [
             }, {
                 path: 'guides',
                 loadChildren: './guides/guides.module#GuidesPageModule'
+            }, {
+                path: 'diary',
+                loadChildren: './diary/diary.module#DiaryPageModule'
             }
             , {
                 path: '',

@@ -14,16 +14,17 @@ import {Camera} from '@ionic-native/camera/ngx';
 import {FullCalendarModule} from '@fullcalendar/angular';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,     IonicStorageModule.forRoot()],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    Camera,
-    FullCalendarModule,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
-  ],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    entryComponents: [],
+    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot()],
+    providers: [
+        StatusBar,
+        SplashScreen,
+        Camera,
+        FullCalendarModule,
+        {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
+    ],
+    bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}

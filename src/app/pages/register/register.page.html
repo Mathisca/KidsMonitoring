@@ -1,5 +1,5 @@
 <ion-content padding>
-    <form [formGroup]="registerForm" (submit)="register()" text-center>
+    <form (submit)="register()" [formGroup]="registerForm" text-center>
 
         <ion-text color="primary-contrast">
             <h1>Your account is just a click away !</h1>
@@ -20,13 +20,13 @@
 
                 <ion-item>
                     <ion-label>Gender</ion-label>
-                    <ion-select placeholder="Select One" value="f" formControlName="gender">
+                    <ion-select formControlName="gender" placeholder="Select One" value="f">
                         <ion-select-option value="f">Female</ion-select-option>
                         <ion-select-option value="m">Male</ion-select-option>
                     </ion-select>
                 </ion-item>
 
-                <ion-radio-group name="country" formControlName="country">
+                <ion-radio-group formControlName="country" name="country">
                     <ion-list-header>
                         <ion-label>Country</ion-label>
                     </ion-list-header>
@@ -44,7 +44,7 @@
 
                 <ion-item>
                     <ion-label>I accept the <a (click)="presentModal()">terms and conditions</a></ion-label>
-                    <ion-toggle slot="end" formControlName="terms"></ion-toggle>
+                    <ion-toggle formControlName="terms" slot="end"></ion-toggle>
                 </ion-item>
 
             </ion-list>
@@ -52,7 +52,9 @@
 
         </div>
         <div padding-top>
-            <ion-button [disabled]="registerForm.pristine || registerForm.invalid" expand="block" size="large" type="submit">Register !</ion-button>
+            <ion-button [disabled]="registerForm.pristine || registerForm.invalid" expand="block" size="large"
+                        type="submit">Register !
+            </ion-button>
         </div>
     </form>
 </ion-content>

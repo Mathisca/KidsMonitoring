@@ -6,7 +6,7 @@
 
 <ion-content>
     <ion-list>
-        <ion-reorder-group disabled="false" (ionItemReorder)="onRenderItems($event)">
+        <ion-reorder-group (ionItemReorder)="onRenderItems($event)" disabled="false">
             <ion-card *ngFor="let kid of kidServ.kidsArray, index as i">
                 <app-kidcard [index]="i" [kid]="kid"></app-kidcard>
             </ion-card>
@@ -15,7 +15,7 @@
     </ion-list>
 
 
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed" [routerLink]="['add']">
+    <ion-fab [routerLink]="['add']" horizontal="end" slot="fixed" vertical="bottom">
         <ion-fab-button>
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>

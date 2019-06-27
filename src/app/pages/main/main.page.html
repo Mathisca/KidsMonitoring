@@ -8,23 +8,23 @@
 </ion-toolbar>
 
 
-    <ion-menu menuId="first" contentId="content" side="start">
-        <ion-header>
-            <ion-toolbar color="primary">
-                <ion-title>Kids Monitoring App</ion-title>
-            </ion-toolbar>
-        </ion-header>
-        <ion-content>
-            <ion-list>
-                <ion-item (click)="openPage(p)" *ngFor="let p of pages"
-                          [class.active-item]="this.router.url.includes(p.path)" [routerLink]="[p.path]">
-                    <ion-icon name="{{p.icon}}"></ion-icon>
-                    <p margin-start>{{p.title}}</p>
-                </ion-item>
-            </ion-list>
-        </ion-content>
-    </ion-menu>
+<ion-menu contentId="content" menuId="first" side="start">
+    <ion-header>
+        <ion-toolbar color="primary">
+            <ion-title>Kids Monitoring App</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-item (click)="openPage(p)" *ngFor="let p of pages"
+                      [class.active-item]="this.router.url.includes(p.path)" [routerLink]="[p.path]">
+                <ion-icon name="{{p.icon}}"></ion-icon>
+                <p margin-start>{{p.title}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
 <ion-content>
     <ion-router-outlet id="content"></ion-router-outlet>
-
 </ion-content>

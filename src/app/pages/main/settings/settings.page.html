@@ -5,21 +5,21 @@
                 <ion-label>General</ion-label>
             </ion-item-divider>
 
-                <ion-radio-group name="country">
-                    <ion-list-header>
-                        <ion-label>Country</ion-label>
-                    </ion-list-header>
+            <ion-radio-group name="country">
+                <ion-list-header>
+                    <ion-label>Country</ion-label>
+                </ion-list-header>
 
-                    <ion-item>
-                        <ion-label>Malaysia</ion-label>
-                        <ion-radio (ionSelect)="this.auth.setCountry('my')" checked slot="start"></ion-radio>
-                    </ion-item>
+                <ion-item>
+                    <ion-label>Malaysia</ion-label>
+                    <ion-radio (ionSelect)="this.auth.setCountry('my')" checked slot="start"></ion-radio>
+                </ion-item>
 
-                    <ion-item>
-                        <ion-label>France</ion-label>
-                        <ion-radio (ionSelect)="this.auth.setCountry('fr')" slot="start"></ion-radio>
-                    </ion-item>
-                </ion-radio-group>
+                <ion-item>
+                    <ion-label>France</ion-label>
+                    <ion-radio (ionSelect)="this.auth.setCountry('fr')" slot="start"></ion-radio>
+                </ion-item>
+            </ion-radio-group>
         </ion-item-group>
     </ion-item-group>
 </ion-content>

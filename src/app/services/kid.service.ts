@@ -119,10 +119,6 @@ export class KidService {
         this.saveKids();
     }
 
-    private saveKids() {
-        this.storage.set('kids', this.kids);
-    }
-
     initService() {
         this.storage.get('kids').then((val) => {
             if (val != null) {
@@ -135,5 +131,9 @@ export class KidService {
                 this.currentKidIndex = val;
             }
         });
+    }
+
+    private saveKids() {
+        this.storage.set('kids', this.kids);
     }
 }

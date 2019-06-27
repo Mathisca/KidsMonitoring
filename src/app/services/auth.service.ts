@@ -16,11 +16,12 @@ export interface AccountData {
     providedIn: 'root'
 })
 export class AuthService {
+    authState = new BehaviorSubject(false);
+
     constructor(private storage: Storage, private navCtrl: NavController) {
     }
 
     private _account: AccountData;
-    authState = new BehaviorSubject(false);
 
     get account(): AccountData {
         return this._account;
@@ -52,10 +53,6 @@ export class AuthService {
         return this.authState.getValue();
     }
 
-    private setAuthentificated(auth: boolean) {
-        this.authState.next(auth);
-    }
-
     public initService() {
         this.storage.get('account').then((val) => {
             if (val != null) {
@@ -65,5 +62,9 @@ export class AuthService {
                 this.account = {} as AccountData;
             }
         });
+    }
+
+    private setAuthentificated(auth: boolean) {
+        this.authState.next(auth);
     }
 }

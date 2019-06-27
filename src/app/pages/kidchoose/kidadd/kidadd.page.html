@@ -8,25 +8,26 @@
 </ion-header>
 
 <ion-content padding>
-    <form [formGroup]="addForm" (submit)="onSubmit()">
+    <form (submit)="onSubmit()" [formGroup]="addForm">
 
         <ion-list>
             <ion-item>
                 <ion-label position="stacked">Name</ion-label>
-                <ion-input type="text" formControlName="name" placeholder="Lily">
+                <ion-input formControlName="name" placeholder="Lily" type="text">
                 </ion-input>
             </ion-item>
 
 
             <ion-item>
                 <ion-label position="stacked">Surname</ion-label>
-                <ion-input type="text" formControlName="surname" placeholder="Smith">
+                <ion-input formControlName="surname" placeholder="Smith" type="text">
                 </ion-input>
             </ion-item>
 
             <ion-item>
                 <ion-label>Birthdate</ion-label>
-                <ion-datetime formControlName="birthdate" placeholder="01/01/2019" display-format="DD/MM/YYYY" picker-format="DD MMMM YYYY"></ion-datetime>
+                <ion-datetime display-format="DD/MM/YYYY" formControlName="birthdate" picker-format="DD MMMM YYYY"
+                              placeholder="01/01/2019"></ion-datetime>
             </ion-item>
 
             <ion-radio-group formControlName="gender">
@@ -47,8 +48,8 @@
 
             <ion-item>
                 <ion-label>Picture</ion-label>
-                <ion-icon name="camera" (click)="takePicture()"></ion-icon>
-                <ion-avatar slot="end" margin>
+                <ion-icon (click)="takePicture()" name="camera"></ion-icon>
+                <ion-avatar margin slot="end">
                     <img [src]="image" alt="Profil picuture">
                 </ion-avatar>
             </ion-item>
@@ -57,7 +58,9 @@
 
         <ion-row class="signin" vertical="bottom">
             <ion-col>
-                <ion-button [disabled]="addForm.pristine || addForm.invalid" color="primary" shape="full" expand="block" type="submit">Add a new child</ion-button>
+                <ion-button [disabled]="addForm.pristine || addForm.invalid" color="primary" expand="block" shape="full"
+                            type="submit">Add a new child
+                </ion-button>
             </ion-col>
         </ion-row>
 

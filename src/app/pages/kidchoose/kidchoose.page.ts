@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Kid, KidService} from '../../services/kid.service';
+import {KidService} from '../../services/kid.service';
 import {Location} from '@angular/common';
 
 @Component({

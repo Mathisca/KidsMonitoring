@@ -1,12 +1,12 @@
 import {TestBed} from '@angular/core/testing';
 
-import {ConfigService} from './config.service';
+import {DiaryService} from './diary.service';
 
-describe('ConfigService', () => {
+describe('DiaryService', () => {
     beforeEach(() => TestBed.configureTestingModule({}));
 
     it('should be created', () => {
-        const service: ConfigService = TestBed.get(ConfigService);
+        const service: DiaryService = TestBed.get(DiaryService);
         expect(service).toBeTruthy();
     });
 });
