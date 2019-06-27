@@ -3,18 +3,18 @@
 
         <ion-list>
             <ion-item>
-                <ion-label>Title</ion-label>
+                <ion-label translate>Title</ion-label>
                 <ion-input formControlName="title"></ion-input>
             </ion-item>
 
             <ion-item>
-                <ion-label>Start date</ion-label>
+                <ion-label translate>Start date</ion-label>
                 <ion-datetime display-format="DD/MM/YYYY HH:mm" formControlName="start"
                               picker-format="DD MMMM YYYY HH:mm" placeholder="01/01/2019"></ion-datetime>
             </ion-item>
 
             <ion-item>
-                <ion-label>End date</ion-label>
+                <ion-label translate>End date</ion-label>
                 <ion-datetime display-format="DD/MM/YYYY HH:mm" formControlName="end"
                               picker-format="DD MMMM YYYY HH:mm" placeholder="01/01/2019"></ion-datetime>
             </ion-item>
@@ -25,7 +25,7 @@
         <ion-row>
             <ion-col>
                 <ion-button [disabled]="addForm.pristine || addForm.invalid" color="primary" expand="block" shape="full"
-                            type="submit">Add the event
+                            translate type="submit">Add the event
                 </ion-button>
             </ion-col>
         </ion-row>
@@ -33,20 +33,20 @@
     </form>
     <div *ngIf="calendar.events.length > 0" padding>
 
-        <h2>List of events</h2>
+        <h2 translate>List of events</h2>
 
         <table>
             <tr style="border-bottom: 1px solid black;">
-                <td>Title</td>
-                <td>Start date</td>
-                <td>End date</td>
+                <td translate>Title</td>
+                <td translate>Start date</td>
+                <td translate>End date</td>
             </tr>
             <tr *ngFor="let event of calendar.events, index as i">
                 <td>{{ event.title }}</td>
-                <td>{{ event.start| date:'short' }}</td>
-                <td>{{ event.end| date:'short' }}</td>
+                <td>{{ event.start | date:'short' }}</td>
+                <td>{{ event.end | date:'short' }}</td>
                 <td>
-                    <ion-button (click)="calendar.removeEvent(i)">Remove</ion-button>
+                    <ion-button (click)="calendar.removeEvent(i)" translate>Remove</ion-button>
                 </td>
             </tr>
         </table>

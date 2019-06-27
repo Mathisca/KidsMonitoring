@@ -6,6 +6,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {IonicModule} from '@ionic/angular';
 
 import {RemindersPage} from './reminders.page';
+import {TranslateModule} from '@ngx-translate/core';
 
 const routes: Routes = [
     {
@@ -44,7 +45,8 @@ const routes: Routes = [
         CommonModule,
         FormsModule,
         IonicModule,
-        RouterModule.forChild(routes)
+        RouterModule.forChild(routes),
+        TranslateModule.forChild()
     ],
     declarations: [RemindersPage]
 })

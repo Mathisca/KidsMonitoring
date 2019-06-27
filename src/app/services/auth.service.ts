@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 import {Storage} from '@ionic/storage';
 import {NavController} from '@ionic/angular';
+import {TranslateService} from '@ngx-translate/core';
 
 export interface AccountData {
     username: string;
@@ -18,7 +19,7 @@ export interface AccountData {
 export class AuthService {
     authState = new BehaviorSubject(false);
 
-    constructor(private storage: Storage, private navCtrl: NavController) {
+    constructor(private storage: Storage, private navCtrl: NavController, private translate: TranslateService) {
     }
 
     private _account: AccountData;
@@ -33,6 +34,11 @@ export class AuthService {
 
     setCountry(country: string) {
         this.account.country = country;
+        if (country === 'fr') {
+            this.translate.use('fr');
+        } else {
+            this.translate.use('en');
+        }
         this.saveData();
     }
 
@@ -57,8 +63,15 @@ export class AuthService {
         this.storage.get('account').then((val) => {
             if (val != null) {
                 this.account = val;
+                if (this.account.country === 'fr') {
+                    this.translate.use('fr');
+                } else {
+                    this.translate.use('en');
+                }
+
                 this.setAuthentificated(true);
             } else {
+                this.translate.use('en');
                 this.account = {} as AccountData;
             }
         });

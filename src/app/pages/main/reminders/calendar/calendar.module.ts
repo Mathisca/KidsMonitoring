@@ -7,6 +7,7 @@ import {IonicModule} from '@ionic/angular';
 
 import {CalendarPage} from './calendar.page';
 import {FullCalendarModule} from '@fullcalendar/angular';
+import {TranslateModule} from '@ngx-translate/core';
 
 const routes: Routes = [
     {
@@ -21,7 +22,8 @@ const routes: Routes = [
         FormsModule,
         IonicModule,
         RouterModule.forChild(routes),
-        FullCalendarModule
+        FullCalendarModule,
+        TranslateModule.forChild()
     ],
     declarations: [CalendarPage]
 })

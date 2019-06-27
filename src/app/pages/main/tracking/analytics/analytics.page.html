@@ -1,16 +1,17 @@
 <ion-item>
-    <ion-label>Graph type</ion-label>
-    <ion-select (ionChange)="recalculateData()" [(ngModel)]="graphType" placeholder="Select One" value="w">
-        <ion-select-option value="w">Weight</ion-select-option>
-        <ion-select-option value="h">Height</ion-select-option>
-        <ion-select-option value="c">Head circumference</ion-select-option>
+    <ion-label translate>Graph type</ion-label>
+    <ion-select (ionChange)="recalculateData()" [(ngModel)]="graphType" placeholder="{{'Select One' | translate}}"
+                value="w">
+        <ion-select-option translate value="w">Weight</ion-select-option>
+        <ion-select-option translate value="h">Height</ion-select-option>
+        <ion-select-option translate value="c">Head circumference</ion-select-option>
     </ion-select>
 </ion-item>
 <ion-item>
-    <ion-label>Graph type</ion-label>
-    <ion-select (ionChange)="recalculateData()" [(ngModel)]="span" placeholder="Select One" value="w">
-        <ion-select-option value="w">Birth to 6 months</ion-select-option>
-        <ion-select-option value="h">Birth to 2 years</ion-select-option>
+    <ion-label translate>Graph type</ion-label>
+    <ion-select (ionChange)="recalculateData()" [(ngModel)]="span" placeholder="{{'Select One' | translate}}" value="w">
+        <ion-select-option translate value="w">Birth to 6 months</ion-select-option>
+        <ion-select-option translate value="h">Birth to 2 years</ion-select-option>
     </ion-select>
 </ion-item>
 

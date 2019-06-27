@@ -6,6 +6,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {IonicModule} from '@ionic/angular';
 
 import {KidaddPage} from './kidadd.page';
+import {TranslateModule} from '@ngx-translate/core';
 
 const routes: Routes = [
     {
@@ -21,6 +22,8 @@ const routes: Routes = [
         IonicModule,
         ReactiveFormsModule,
         RouterModule.forChild(routes),
+        TranslateModule.forChild()
+
     ],
     declarations: [KidaddPage]
 })

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MenuController} from '@ionic/angular';
 import {Router} from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
 
 export interface MenuItem {
     title: string;
@@ -19,17 +20,17 @@ export class MainPage implements OnInit {
     pages: Array<MenuItem>;
     currentPage: MenuItem;
 
-    constructor(private menu: MenuController, public router: Router) {
+    constructor(private menu: MenuController, public router: Router, public translate: TranslateService) {
         this.pages = [
-            {title: 'Switch kid', path: '/kids', icon: 'repeat'},
-            {title: 'Dashboard', path: '/app/dashboard', icon: 'home'},
-            {title: 'Tracking', path: '/app/tracking', icon: 'trending-up'},
-            {title: 'Reminders', path: '/app/reminders', icon: 'calendar'},
-            {title: 'Milestones', path: '/app/milestones', icon: 'planet'},
-            {title: 'Diray', path: '/app/diary', icon: 'book'},
-            {title: 'Food Calculator', path: '/app/food', icon: 'calculator'},
-            {title: 'Guides', path: '/app/guides', icon: 'help-circle'},
-            {title: 'Settings', path: '/app/settings', icon: 'switch'},
+            {title: this.translate.instant('Switch kid'), path: '/kids', icon: 'repeat'},
+            {title: this.translate.instant('Dashboard'), path: '/app/dashboard', icon: 'home'},
+            {title: this.translate.instant('Tracking'), path: '/app/tracking', icon: 'trending-up'},
+            {title: this.translate.instant('Reminders'), path: '/app/reminders', icon: 'calendar'},
+            {title: this.translate.instant('Milestones'), path: '/app/milestones', icon: 'planet'},
+            {title: this.translate.instant('Diray'), path: '/app/diary', icon: 'book'},
+            {title: this.translate.instant('Food Calculator'), path: '/app/food', icon: 'calculator'},
+            {title: this.translate.instant('Guides'), path: '/app/guides', icon: 'help-circle'},
+            {title: this.translate.instant('Settings'), path: '/app/settings', icon: 'switch'},
         ];
     }
 

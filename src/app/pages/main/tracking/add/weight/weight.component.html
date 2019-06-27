@@ -3,13 +3,13 @@
 
         <ion-list>
             <ion-item>
-                <ion-label>Date of measurement</ion-label>
+                <ion-label translate>Date of measurement</ion-label>
                 <ion-datetime [(ngModel)]="myDate" display-format="DD/MM/YYYY" formControlName="date"
                               picker-format="DD MMMM YYYY" placeholder="01/01/2019"></ion-datetime>
             </ion-item>
 
             <ion-item>
-                <ion-label>Weight</ion-label>
+                <ion-label translate>Weight</ion-label>
                 <ion-input formControlName="size" min="0" placeholder="1.2 kg" type="number"></ion-input>
             </ion-item>
 
@@ -18,27 +18,28 @@
         <ion-row>
             <ion-col>
                 <ion-button [disabled]="addForm.pristine || addForm.invalid" color="primary" expand="block" shape="full"
-                            type="submit">Add the measure
+                            translate type="submit">Add the measure
                 </ion-button>
             </ion-col>
         </ion-row>
 
     </form>
-    <div *ngIf="kids.kidsArray[kids.currentKidIndex].weightmeasures != null || kids.kidsArray[kids.currentKidIndex].weightmeasures.length > 0">
+    <div *ngIf="kids.kidsArray[kids.currentKidIndex].weightmeasures != null
+        || kids.kidsArray[kids.currentKidIndex].weightmeasures.length > 0">
 
-        <h2>List of measurements</h2>
+        <h2 translate>List of measurements</h2>
 
         <table>
             <tr style="border-bottom: 1px solid black;">
-                <td>Date</td>
-                <td>Size (cm)</td>
-                <td>Action</td>
+                <td translate>Date</td>
+                <td translate>Size (cm)</td>
+                <td translate>Action</td>
             </tr>
             <tr *ngFor="let measure of kids.kidsArray[kids.currentKidIndex].weightmeasures, index as i">
                 <td>{{ measure.adddate | date }}</td>
                 <td>{{ measure.value }}</td>
                 <td>
-                    <ion-button (click)="kids.removeWeightMeasure(i)">Remove</ion-button>
+                    <ion-button (click)="kids.removeWeightMeasure(i)" translate>Remove</ion-button>
                 </td>
             </tr>
         </table>

@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {NavController} from '@ionic/angular';
 import {CalendarService} from '../../../../services/calendar.service';
 
 @Component({

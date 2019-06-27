@@ -1,5 +1,5 @@
 <ion-content padding>
-    <h2>{{kids.currentKid.name}}'s diary</h2>
+    <h2 [translateParams]="{name: kids.currentKid.name | titlecase}" translate>'s diary</h2>
 
     <ion-card *ngFor="let pDiary of this.diary.currentDiary">
         <ion-card-header>

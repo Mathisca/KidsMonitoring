@@ -5,12 +5,12 @@
             <ion-icon name="reorder"></ion-icon>
 
             <ion-card-header>
-                <ion-card-subtitle>{{monthOld}} months old</ion-card-subtitle>
+                <ion-card-subtitle [translateParams]="{age: monthOld}" translate>months old</ion-card-subtitle>
                 <ion-card-title>{{kid.name}}</ion-card-title>
             </ion-card-header>
 
             <ion-avatar margin slot="end">
-                <img [src]="kid.image" alt="{{kid.name}}'s face">
+                <img [alt]="'\'s face' | translate: {name: kid.name}" [src]="kid.image">
             </ion-avatar>
         </ion-item-divider>
     </ion-reorder>

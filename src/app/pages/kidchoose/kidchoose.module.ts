@@ -7,6 +7,7 @@ import {IonicModule} from '@ionic/angular';
 
 import {KidchoosePage} from './kidchoose.page';
 import {KidcardComponent} from './kidcard/kidcard.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 const routes: Routes = [
     {
@@ -25,6 +26,7 @@ const routes: Routes = [
         FormsModule,
         IonicModule,
         RouterModule.forChild(routes),
+        TranslateModule.forChild()
     ],
     declarations: [KidchoosePage, KidcardComponent]
 })

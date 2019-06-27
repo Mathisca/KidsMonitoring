@@ -7,6 +7,7 @@ import {IonicModule} from '@ionic/angular';
 
 import {RegisterPage} from './register.page';
 import {TermsComponent} from './terms/terms.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 const routes: Routes = [
     {
@@ -21,7 +22,8 @@ const routes: Routes = [
         FormsModule,
         ReactiveFormsModule,
         IonicModule,
-        RouterModule.forChild(routes)
+        RouterModule.forChild(routes),
+        TranslateModule.forChild()
     ],
     entryComponents: [TermsComponent],
     declarations: [RegisterPage, TermsComponent]

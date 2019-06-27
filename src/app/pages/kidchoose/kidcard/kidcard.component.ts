@@ -16,16 +16,16 @@ export class KidcardComponent implements OnInit {
     constructor(private router: Router, private kidServ: KidService) {
     }
 
-    ngOnInit() {
-        this.monthOld = KidcardComponent.monthDiff(new Date(this.kid.birth), new Date());
-    }
-
     static monthDiff(d1, d2) {
         let months;
         months = (d2.getFullYear() - d1.getFullYear()) * 12;
         months -= d1.getMonth() + 1;
         months += d2.getMonth();
         return months <= 0 ? 0 : months;
+    }
+
+    ngOnInit() {
+        this.monthOld = KidcardComponent.monthDiff(new Date(this.kid.birth), new Date());
     }
 
     onClick() {

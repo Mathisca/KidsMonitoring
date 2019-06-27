@@ -3,7 +3,7 @@
         <ion-buttons slot="start">
             <ion-back-button></ion-back-button>
         </ion-buttons>
-        <ion-title>Add a child</ion-title>
+        <ion-title translate>Add a child</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -12,45 +12,45 @@
 
         <ion-list>
             <ion-item>
-                <ion-label position="stacked">Name</ion-label>
+                <ion-label position="stacked" translate>Name</ion-label>
                 <ion-input formControlName="name" placeholder="Lily" type="text">
                 </ion-input>
             </ion-item>
 
 
             <ion-item>
-                <ion-label position="stacked">Surname</ion-label>
+                <ion-label position="stacked" translate>Surname</ion-label>
                 <ion-input formControlName="surname" placeholder="Smith" type="text">
                 </ion-input>
             </ion-item>
 
             <ion-item>
-                <ion-label>Birthdate</ion-label>
+                <ion-label translate>Birthdate</ion-label>
                 <ion-datetime display-format="DD/MM/YYYY" formControlName="birthdate" picker-format="DD MMMM YYYY"
                               placeholder="01/01/2019"></ion-datetime>
             </ion-item>
 
             <ion-radio-group formControlName="gender">
                 <ion-list-header>
-                    <ion-label>Gender</ion-label>
+                    <ion-label translate>Gender</ion-label>
                 </ion-list-header>
 
                 <ion-item>
-                    <ion-label>Boy</ion-label>
+                    <ion-label translate>Boy</ion-label>
                     <ion-radio checked slot="start" value="m"></ion-radio>
                 </ion-item>
 
                 <ion-item>
-                    <ion-label>Girl</ion-label>
+                    <ion-label translate>Girl</ion-label>
                     <ion-radio slot="start" value="f"></ion-radio>
                 </ion-item>
             </ion-radio-group>
 
             <ion-item>
-                <ion-label>Picture</ion-label>
+                <ion-label translate>Picture</ion-label>
                 <ion-icon (click)="takePicture()" name="camera"></ion-icon>
                 <ion-avatar margin slot="end">
-                    <img [src]="image" alt="Profil picuture">
+                    <img [src]="image" alt="{{'Profil picuture' | translate}}}">
                 </ion-avatar>
             </ion-item>
 
@@ -59,7 +59,7 @@
         <ion-row class="signin" vertical="bottom">
             <ion-col>
                 <ion-button [disabled]="addForm.pristine || addForm.invalid" color="primary" expand="block" shape="full"
-                            type="submit">Add a new child
+                            translate type="submit">Add a new child
                 </ion-button>
             </ion-col>
         </ion-row>

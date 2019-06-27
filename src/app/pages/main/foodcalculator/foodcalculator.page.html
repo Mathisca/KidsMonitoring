@@ -1,13 +1,13 @@
 <ion-content padding>
     <ion-list>
         <ion-item>
-            <ion-label position="stacked">Weight of the baby (kg)</ion-label>
+            <ion-label position="stacked" translate>Weight of the baby (kg)</ion-label>
             <ion-input [(ngModel)]="weight" max="7" min="0" placeholder="3.145" type="number">
             </ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label position="stacked">Number of bottles</ion-label>
+            <ion-label position="stacked" text-wrap translate>Number of bottles</ion-label>
             <ion-range [(ngModel)]="bottles" color="secondary" max="8" min="3">
                 <ion-label slot="start">3</ion-label>
                 <ion-label slot="end">8</ion-label>
@@ -15,10 +15,14 @@
         </ion-item>
     </ion-list>
 
-    <p *ngIf="weight && bottles">
-        <strong>{{kid.currentKid.name}}</strong> should drink {{100 * weight + 250 | number: '1.0-1'}} mL per day,
-        or <strong>{{(100 * weight + 250 | number) / bottles | number: '1.0-1'}} mL
-        in {{bottles}} bottles</strong>
+    <p *ngIf="weight && bottles"
+       [translateParams]="{name: kid.currentKid.name | titlecase, perday: 100 * weight + 250 | number: '1.0-1'}"
+       [translate]="'shouldDrink'">
+        should drink mL per day,
+        or <strong
+            [translateParams]="{perbottle: (100 * weight + 250 | number) / bottles | number: '1.0-1', bottles: bottles}"
+            [translate]="'shouldDrink2'"> mL
+        in bottles</strong>
     </p>
 
 </ion-content>

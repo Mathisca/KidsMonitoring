@@ -8,6 +8,7 @@ import {KidService} from './services/kid.service';
 import {CalendarService} from './services/calendar.service';
 import {MilestonesService} from './services/milestones.service';
 import {DiaryService} from './services/diary.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-root',
@@ -23,11 +24,14 @@ export class AppComponent {
         private calendar: CalendarService,
         private milestones: MilestonesService,
         private diary: DiaryService,
-        private kid: KidService) {
+        private kid: KidService,
+        private translate: TranslateService) {
         this.initializeApp();
     }
 
     initializeApp() {
+        this.translate.addLangs(['en', 'fr']);
+        this.translate.setDefaultLang('en');
         this.auth.initService();
         this.kid.initService();
         this.calendar.initService();
@@ -37,6 +41,5 @@ export class AppComponent {
             this.statusBar.styleLightContent();
             this.splashScreen.hide();
         });
-
     }
 }

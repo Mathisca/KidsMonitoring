@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {Chart} from 'chart.js';
 import {WhodataService} from '../../../../services/whodata.service';
 import {KidService, Measure} from '../../../../services/kid.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-analytics',
@@ -23,7 +24,7 @@ export class AnalyticsPage {
     currentVals: string;
     chart: Chart;
 
-    constructor(private whoData: WhodataService, private kids: KidService) {
+    constructor(private whoData: WhodataService, private kids: KidService, public translate: TranslateService) {
     }
 
     ionViewDidEnter() {
@@ -38,13 +39,13 @@ export class AnalyticsPage {
                 labels: this.xData,
                 datasets: [
                     {
-                        label: 'Min',
+                        label: this.translate.instant('Min'),
                         data: this.dataMin,
                         fill: false,
                         borderColor: 'rgba(255,0,30,0.76)',
                         backgroundColor: '#FFFFFF',
                     }, {
-                        label: 'Average',
+                        label: this.translate.instant('Average'),
                         data: this.dataMed,
                         fill: false,
                         borderColor: 'rgba(27,255,16,0.53)',
@@ -52,13 +53,13 @@ export class AnalyticsPage {
                         backgroundColor: '#FFFFFF',
                     }, {
                         borderColor: 'rgba(255,0,30,0.76)',
-                        label: 'Max',
+                        label: this.translate.instant('Max'),
                         data: this.dataMax,
                         fill: false,
                         backgroundColor: '#FFFFFF',
                     }, {
                         borderColor: 'rgba(0,0,0,0.76)',
-                        label: 'Data',
+                        label: this.translate.instant('Data'),
                         data: this.data,
                         fill: false,
                         point: {radius: 1},
@@ -72,7 +73,7 @@ export class AnalyticsPage {
                 elements: {point: {radius: 0}},
                 title: {
                     display: true,
-                    text: 'Analytic Graph'
+                    text: this.translate.instant('Analytic Graph')
                 },
                 tooltips: {
                     mode: 'index',
@@ -87,14 +88,14 @@ export class AnalyticsPage {
                         display: true,
                         scaleLabel: {
                             display: true,
-                            labelString: 'Days'
+                            labelString: this.translate.instant('Days')
                         }
                     }],
                     yAxes: [{
                         display: true,
                         scaleLabel: {
                             display: true,
-                            labelString: 'Value'
+                            labelString: this.translate.instant('Value')
                         }
                     }]
                 }
@@ -120,7 +121,7 @@ export class AnalyticsPage {
                 this.currentVals = this.whoData.wfa_girls;
             }
             pData = this.kids.kidsArray[this.kids.currentKidIndex].weightmeasures;
-            this.analyticsGraph.chart.options.scales.yAxes[0].scaleLabel.labelString = 'Weight (kg)';
+            this.analyticsGraph.chart.options.scales.yAxes[0].scaleLabel.labelString = this.translate.instant('Weight (kg)');
         } else if (this.graphType.match('h')) {
             if (isMale) {
                 this.currentVals = this.whoData.lhfa_boys;
@@ -129,7 +130,7 @@ export class AnalyticsPage {
             }
             pData = this.kids.kidsArray[this.kids.currentKidIndex].heightmeasures;
 
-            this.analyticsGraph.chart.options.scales.yAxes[0].scaleLabel.labelString = 'Height (cm)';
+            this.analyticsGraph.chart.options.scales.yAxes[0].scaleLabel.labelString = this.translate.instant('Height (cm)');
 
         } else {
             if (isMale) {
@@ -139,7 +140,7 @@ export class AnalyticsPage {
             }
             pData = this.kids.kidsArray[this.kids.currentKidIndex].headmeasures;
 
-            this.analyticsGraph.chart.options.scales.yAxes[0].scaleLabel.labelString = 'Head circumference (cm)';
+            this.analyticsGraph.chart.options.scales.yAxes[0].scaleLabel.labelString = this.translate.instant('Head circumference (cm)');
 
         }
 

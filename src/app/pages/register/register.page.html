@@ -2,48 +2,49 @@
     <form (submit)="register()" [formGroup]="registerForm" text-center>
 
         <ion-text color="primary-contrast">
-            <h1>Your account is just a click away !</h1>
+            <h1 translate>Your account is just a click away !</h1>
         </ion-text>
 
         <div>
             <ion-list>
                 <ion-item>
-                    <ion-label color="primary" position="floating">Name</ion-label>
+                    <ion-label color="primary" position="floating" translate>Name</ion-label>
                     <ion-input formControlName="name" placeholder="John" required></ion-input>
                 </ion-item>
 
                 <ion-item>
-                    <ion-label color="primary" position="floating">Surname</ion-label>
+                    <ion-label color="primary" position="floating" translate>Surname</ion-label>
                     <ion-input formControlName="surname" placeholder="Smith" required></ion-input>
                 </ion-item>
 
 
                 <ion-item>
-                    <ion-label>Gender</ion-label>
-                    <ion-select formControlName="gender" placeholder="Select One" value="f">
-                        <ion-select-option value="f">Female</ion-select-option>
-                        <ion-select-option value="m">Male</ion-select-option>
+                    <ion-label translate>Gender</ion-label>
+                    <ion-select formControlName="gender" placeholder="{{'Select One' | translate}}" value="f">
+                        <ion-select-option translate value="f">Female</ion-select-option>
+                        <ion-select-option translate value="m">Male</ion-select-option>
                     </ion-select>
                 </ion-item>
 
                 <ion-radio-group formControlName="country" name="country">
                     <ion-list-header>
-                        <ion-label>Country</ion-label>
+                        <ion-label translate>Country</ion-label>
                     </ion-list-header>
 
                     <ion-item>
-                        <ion-label>Malaysia</ion-label>
+                        <ion-label translate>Malaysia</ion-label>
                         <ion-radio checked slot="start" value="my"></ion-radio>
                     </ion-item>
 
                     <ion-item>
-                        <ion-label>France</ion-label>
+                        <ion-label translate>France</ion-label>
                         <ion-radio slot="start" value="fr"></ion-radio>
                     </ion-item>
                 </ion-radio-group>
 
                 <ion-item>
-                    <ion-label>I accept the <a (click)="presentModal()">terms and conditions</a></ion-label>
+                    <ion-label translate>I accept the <a (click)="presentModal()" translate>terms and conditions</a>
+                    </ion-label>
                     <ion-toggle formControlName="terms" slot="end"></ion-toggle>
                 </ion-item>
 

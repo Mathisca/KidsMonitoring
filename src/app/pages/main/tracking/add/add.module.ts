@@ -9,6 +9,7 @@ import {AddPage} from './add.page';
 import {HeadComponent} from './head/head.component';
 import {WeightComponent} from './weight/weight.component';
 import {HeightComponent} from './height/height.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 const routes: Routes = [
     {
@@ -32,7 +33,8 @@ const routes: Routes = [
         FormsModule,
         IonicModule,
         ReactiveFormsModule,
-        RouterModule.forChild(routes)
+        RouterModule.forChild(routes),
+        TranslateModule.forChild()
     ],
     declarations: [AddPage, HeadComponent, HeightComponent, WeightComponent]
 })

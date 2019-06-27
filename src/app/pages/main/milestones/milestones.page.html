@@ -1,21 +1,21 @@
 <ion-content>
 
     <ion-item>
-        <ion-label>Milestones span</ion-label>
+        <ion-label translate>Milestones span</ion-label>
         <ion-select [(ngModel)]="milestoneSpan">
-            <ion-select-option value="2mo">Birth to 2 months</ion-select-option>
-            <ion-select-option value="4mo">2 months to 4 months</ion-select-option>
-            <ion-select-option value="6mo">4 months to 6 months</ion-select-option>
-            <ion-select-option value="9mo">6 months to 9 months</ion-select-option>
-            <ion-select-option value="12mo">9 months to 12 months</ion-select-option>
-            <ion-select-option value="18mo">12 months to 18 months</ion-select-option>
-            <ion-select-option value="24mo">18 months to 24 months</ion-select-option>
+            <ion-select-option translate value="2mo">Birth to 2 months</ion-select-option>
+            <ion-select-option translate value="4mo">2 months to 4 months</ion-select-option>
+            <ion-select-option translate value="6mo">4 months to 6 months</ion-select-option>
+            <ion-select-option translate value="9mo">6 months to 9 months</ion-select-option>
+            <ion-select-option translate value="12mo">9 months to 12 months</ion-select-option>
+            <ion-select-option translate value="18mo">12 months to 18 months</ion-select-option>
+            <ion-select-option translate value="24mo">18 months to 24 months</ion-select-option>
         </ion-select>
     </ion-item>
 
 
     <ion-list>
-        <ion-list-header>
+        <ion-list-header translate>
             Social and Emotional
         </ion-list-header>
 
@@ -25,7 +25,7 @@
             <ion-checkbox [checked]="milestones.isDone('social'+ i + milestoneSpan)" slot="end"></ion-checkbox>
         </ion-item>
 
-        <ion-list-header>
+        <ion-list-header translate>
             Language/Communication
         </ion-list-header>
 
@@ -34,7 +34,7 @@
             <ion-label text-wrap>{{milestone}}</ion-label>
             <ion-checkbox [checked]="milestones.isDone('language'+ i + milestoneSpan)" slot="end"></ion-checkbox>
         </ion-item>
-        <ion-list-header>
+        <ion-list-header translate>
             Cognitive (learning, thinking, problem-solving)
         </ion-list-header>
 
@@ -44,7 +44,7 @@
             <ion-checkbox [checked]="milestones.isDone('cognitive'+ i + milestoneSpan)" slot="end"></ion-checkbox>
         </ion-item>
 
-        <ion-list-header>
+        <ion-list-header translate>
             Movement/Physical Development
         </ion-list-header>
 
@@ -56,7 +56,8 @@
     </ion-list>
 
     <ion-item>
-        <ion-label text-wrap>Source: <a href="https://www.cdc.gov/">Centers for Disease Control and Prevention</a>
+        <ion-label text-wrap translate>Source: <a href="https://www.cdc.gov/" translate>Centers for Disease Control and
+            Prevention</a>
         </ion-label>
     </ion-item>
 </ion-content>

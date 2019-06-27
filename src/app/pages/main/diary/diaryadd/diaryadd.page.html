@@ -3,20 +3,22 @@
 
         <ion-list>
             <ion-item>
-                <ion-label>Date of the entry</ion-label>
+                <ion-label translate>Date of the entry</ion-label>
                 <ion-datetime display-format="DD/MM/YYYY" formControlName="date"
                               picker-format="DD MMMM YYYY" placeholder="01/01/2019"></ion-datetime>
             </ion-item>
 
             <ion-item>
-                <ion-label position="stacked">Title</ion-label>
-                <ion-input formControlName="title" placeholder="{{kids.currentKid.name}}'s first word!" type="text">
+                <ion-label position="stacked" translate>Title</ion-label>
+                <ion-input [placeholder]="'\'s first word!' | translate:{name: kids.currentKid.name}"
+                           formControlName="title"
+                           type="text">
                 </ion-input>
             </ion-item>
 
             <ion-item>
-                <ion-label position="stacked">Notes</ion-label>
-                <ion-textarea formControlName="notes" placeholder="Enter your notes here" type="text">
+                <ion-label position="stacked" translate>Notes</ion-label>
+                <ion-textarea formControlName="notes" placeholder="{{'Enter your notes here' | translate}}" type="text">
                 </ion-textarea>
             </ion-item>
         </ion-list>
@@ -24,7 +26,7 @@
         <ion-row vertical="bottom">
             <ion-col>
                 <ion-button [disabled]="addForm.pristine || addForm.invalid" color="primary" expand="block" shape="full"
-                            type="submit">Add a new entry to the diary
+                            translate type="submit">Add a new entry to the diary
                 </ion-button>
             </ion-col>
         </ion-row>

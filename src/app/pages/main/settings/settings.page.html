@@ -2,22 +2,24 @@
     <ion-item-group>
         <ion-item-group>
             <ion-item-divider>
-                <ion-label>General</ion-label>
+                <ion-label translate>General</ion-label>
             </ion-item-divider>
 
             <ion-radio-group name="country">
                 <ion-list-header>
-                    <ion-label>Country</ion-label>
+                    <ion-label translate>Country</ion-label>
                 </ion-list-header>
 
                 <ion-item>
-                    <ion-label>Malaysia</ion-label>
-                    <ion-radio (ionSelect)="this.auth.setCountry('my')" checked slot="start"></ion-radio>
+                    <ion-label translate>Malaysia</ion-label>
+                    <ion-radio (ionSelect)="this.auth.setCountry('my')" [checked]="this.auth.account.country == 'my'"
+                               slot="start"></ion-radio>
                 </ion-item>
 
                 <ion-item>
-                    <ion-label>France</ion-label>
-                    <ion-radio (ionSelect)="this.auth.setCountry('fr')" slot="start"></ion-radio>
+                    <ion-label translate>France</ion-label>
+                    <ion-radio (ionSelect)="this.auth.setCountry('fr');loc.go(loc.path())"
+                               [checked]="this.auth.account.country == 'fr'" slot="start"></ion-radio>
                 </ion-item>
             </ion-radio-group>
         </ion-item-group>

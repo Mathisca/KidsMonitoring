@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {KidService} from '../../../../../services/kid.service';
-import {NavController} from '@ionic/angular';
 
 @Component({
     selector: 'app-head',
